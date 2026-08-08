@@ -161,15 +161,17 @@ h3,h4{
   padding:128px 32px 72px;
   margin:0 auto;
 }
-.hero-v2 .eyebrow{ color:var(--summit-blue); }
+/* Hero stays onyx in both themes: force light-on-dark ink */
+.hero-v2 .eyebrow{ color:var(--color-gold); }
 .hero-v2 h1{
   font-size:clamp(2.6rem, 7vw, 5rem);
   line-height:1.08;
   letter-spacing:-0.02em;
   font-weight:700;
   margin:14px 0 0;
+  color:var(--text-on-onyx);
 }
-.hero-v2 h1 .accent{ color:var(--summit-blue); }
+.hero-v2 h1 .accent{ color:var(--color-gold); }
 .hero-v2 p.lede{
   font-size:clamp(1.05rem, 2vw, 1.4rem);
   font-weight:300;
@@ -180,7 +182,7 @@ h3,h4{
 .hero-v2 p.desc{
   font-size:clamp(0.9rem, 1.3vw, 1.05rem);
   font-weight:300;
-  color:var(--text-dim);
+  color:rgba(241,238,230,0.68);
   margin:12px 0 0;
   max-width:560px;
 }
@@ -203,7 +205,7 @@ h3,h4{
 .btn-hero-primary:hover{ border-color:var(--color-gold); filter:none; }
 .btn-hero-secondary{
   background:transparent; color:var(--text-on-onyx);
-  border-color:var(--border);
+  border-color:rgba(241,238,230,0.28);
 }
 .btn-hero-secondary:hover{ border-color:var(--color-gold); filter:none; }
 .hero-v2-trust{
@@ -490,14 +492,14 @@ body.intro-lock{ overflow:hidden; }
 }
 
 /* ---------- hero rank invite (quiz-first) ---------- */
-.rank-invite .eyebrow{ margin-bottom:10px; }
+.rank-invite .eyebrow{ margin-bottom:10px; color:var(--accent-readable); }
 .rank-invite-title{
   font-family:var(--font-display);
   font-size:clamp(1.6rem, 2.4vw, 2rem);
   font-weight:600;
   line-height:1.15;
   margin:0 0 10px;
-  color:var(--color-parchment);
+  color:var(--text);
 }
 .rank-invite-lede{
   margin:0 0 22px;
@@ -516,7 +518,7 @@ body.intro-lock{ overflow:hidden; }
 .rank-pole-end{ text-align:right; align-items:flex-end; }
 .rank-pole-name{
   display:flex; align-items:center; gap:8px;
-  font-size:14px; font-weight:600; color:var(--color-parchment);
+  font-size:14px; font-weight:600; color:var(--text);
 }
 .rank-pole-end .rank-pole-name{ flex-direction:row-reverse; }
 .rank-dot{
