@@ -27,7 +27,16 @@
     if (!enabled || gtagLoaded) return;
     gtagLoaded = true;
     window.gtag('js', new Date());
-    window.gtag('config', id, { anonymize_ip: true });
+    window.gtag('config', id, {
+      anonymize_ip: true,
+      language: (document.documentElement.lang || 'it').slice(0, 2).toLowerCase()
+    });
+    if (typeof window.crestTrack === 'function') {
+      window.crestTrack('page_view', {
+        language: (document.documentElement.lang || 'it').slice(0, 2).toLowerCase(),
+        page_path: location.pathname
+      });
+    }
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
@@ -48,7 +57,9 @@
   }
 
   window.crestTrack = function (eventName, params) {
-    var payload = params || {};
+    var payload = Object.assign({
+      language: (document.documentElement.lang || 'it').slice(0, 2).toLowerCase()
+    }, params || {});
     if (!enabled) {
       if (typeof console !== 'undefined' && console.debug) {
         console.debug('[crestTrack]', eventName, payload);
@@ -78,7 +89,36 @@
     if (banner) banner.hidden = true;
   }
 
+  function consentCopy() {
+    var lang = (document.documentElement.lang || 'it').slice(0, 2).toLowerCase();
+    var packs = {
+      it: {
+        title: 'Cookie e misurazione',
+        body: 'Usiamo Google Analytics per capire come migliorare il sito. Nessuna pubblicità. Puoi accettare o rifiutare: senza consenso non partono cookie di misurazione. ',
+        policy: 'Cookie policy',
+        accept: 'Accetta',
+        reject: 'Rifiuta'
+      },
+      en: {
+        title: 'Cookies and measurement',
+        body: 'We use Google Analytics to understand how to improve the site. No ads. You can accept or refuse: without consent, measurement cookies do not run. ',
+        policy: 'Cookie policy',
+        accept: 'Accept',
+        reject: 'Refuse'
+      },
+      fr: {
+        title: 'Cookies et mesure',
+        body: 'Nous utilisons Google Analytics pour comprendre comment améliorer le site. Pas de publicité. Vous pouvez accepter ou refuser : sans consentement, aucun cookie de mesure. ',
+        policy: 'Politique cookies',
+        accept: 'Accepter',
+        reject: 'Refuser'
+      }
+    };
+    return packs[lang] || packs.it;
+  }
+
   function buildBanner() {
+    var copy = consentCopy();
     var banner = document.createElement('div');
     banner.id = 'consentBanner';
     banner.className = 'consent-banner';
@@ -88,19 +128,19 @@
 
     var title = document.createElement('p');
     title.id = 'consentTitle';
-    title.style.color = 'var(--ivory)';
+    title.style.color = 'var(--text)';
     title.style.fontWeight = '600';
     title.style.marginBottom = '8px';
-    title.textContent = 'Cookie e misurazione';
+    title.textContent = copy.title;
 
     var body = document.createElement('p');
-    body.appendChild(document.createTextNode(
-      'Usiamo Google Analytics per capire come migliorare il sito. Nessuna pubblicità. Puoi accettare o rifiutare: senza consenso non partono cookie di misurazione. '
-    ));
+    body.appendChild(document.createTextNode(copy.body));
     var priv = document.createElement('a');
     priv.className = 'text-link';
-    priv.href = 'cookies.html';
-    priv.textContent = 'Cookie policy';
+    var pathParts = (location.pathname || '').split('/').filter(Boolean);
+    var assetPrefix = (pathParts[0] === 'en' || pathParts[0] === 'fr') ? '../' : '';
+    priv.href = assetPrefix + 'cookies.html';
+    priv.textContent = copy.policy;
     body.appendChild(priv);
 
     var actions = document.createElement('div');
@@ -109,7 +149,7 @@
     var accept = document.createElement('button');
     accept.type = 'button';
     accept.className = 'btn btn-primary';
-    accept.textContent = 'Accetta';
+    accept.textContent = copy.accept;
     accept.addEventListener('click', function () {
       writeConsent('granted');
       grantAnalytics();
@@ -119,7 +159,7 @@
     var reject = document.createElement('button');
     reject.type = 'button';
     reject.className = 'btn btn-outline';
-    reject.textContent = 'Rifiuta';
+    reject.textContent = copy.reject;
     reject.addEventListener('click', function () {
       writeConsent('denied');
       denyAnalytics();

@@ -3,21 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I Ranghi — The Crest Guild</title>
+<title>I Ranghi · The Crest Guild</title>
 <meta name="description" content="Dalla scuola sci all'indipendenza: i cinque ranghi della Gilda, con criteri verificabili per ogni tappa.">
 <link rel="canonical" href="https://www.thecrestguild.com/pathways">
-<meta property="og:title" content="I Ranghi — The Crest Guild">
+<link rel="alternate" hreflang="it" href="https://www.thecrestguild.com/pathways.html">
+<link rel="alternate" hreflang="en" href="https://www.thecrestguild.com/en/pathways.html">
+<link rel="alternate" hreflang="fr" href="https://www.thecrestguild.com/fr/pathways.html">
+<link rel="alternate" hreflang="x-default" href="https://www.thecrestguild.com/">
+<meta property="og:title" content="I Ranghi · The Crest Guild">
 <meta property="og:description" content="Dalla scuola sci all'indipendenza: i cinque ranghi della Gilda, con criteri verificabili per ogni tappa.">
 <meta property="og:url" content="https://www.thecrestguild.com/pathways">
 <meta property="og:image" content="https://www.thecrestguild.com/assets/img/crest-mark.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="I Ranghi — The Crest Guild">
+<meta name="twitter:title" content="I Ranghi · The Crest Guild">
 <meta name="twitter:description" content="Dalla scuola sci all'indipendenza: i cinque ranghi della Gilda, con criteri verificabili per ogni tappa.">
 <meta name="twitter:image" content="https://www.thecrestguild.com/assets/img/crest-mark.png">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<script>
+(function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>
 <link rel="stylesheet" href="assets/style-guild.css">
 <script src="assets/config.js"></script>
 <script src="assets/analytics.js"></script>
@@ -49,7 +56,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest" src="assets/img/crest-mark-white.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="assets/img/crest-mark-white.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-light-only" src="assets/img/crest-mark-dark.png" alt="" width="28" height="34">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Principale">
@@ -60,6 +68,15 @@
       <a href="ecosystem.html">Ecosystem</a>
     </nav>
     <div class="nav-right">
+      <div class="lang-switch" role="navigation" aria-label="Language">
+        <a href="pathways.html" aria-current="true" lang="it" hreflang="it">IT</a>
+        <a href="en/pathways.html" lang="en" hreflang="en">EN</a>
+        <a href="fr/pathways.html" lang="fr" hreflang="fr">FR</a>
+      </div>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambia tema chiaro o scuro" title="Theme">
+        <span class="theme-toggle-sun" aria-hidden="true">☀</span>
+        <span class="theme-toggle-moon" aria-hidden="true">☾</span>
+      </button>
       <a class="nav-cta" href="#candidati" data-track="cta_click">Candidati</a>
       <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
@@ -73,6 +90,12 @@
   <a href="quiz.html">Quiz</a>
   <a href="about.html">Chi Siamo</a>
   <a href="ecosystem.html">Ecosystem</a>
+  <div class="lang-switch mn-lang" role="navigation" aria-label="Language">
+        <a href="pathways.html" aria-current="true" lang="it" hreflang="it">IT</a>
+        <a href="en/pathways.html" lang="en" hreflang="en">EN</a>
+        <a href="fr/pathways.html" lang="fr" hreflang="fr">FR</a>
+      </div>
+  <button type="button" class="theme-toggle mn-theme" data-theme-toggle aria-label="Cambia tema chiaro o scuro">Tema chiaro / scuro</button>
   <a class="mn-cta" href="#candidati">Candidati</a>
 </div>
 
@@ -102,7 +125,7 @@
         <p class="eyebrow">Punto di partenza</p>
         <h3>In Scuola</h3>
         <p><span class="state state-pending">Fuori dalla Gilda</span></p>
-        <p>Lavori solo tramite la scuola sci: clienti, tariffe e calendario decisi da altri. È il punto da cui parte chiunque entri in Gilda.</p>
+        <p>Lavori solo tramite la scuola sci: clienti, tariffe e calendario decisi da altri. È da qui che parte chiunque entri in Gilda.</p>
         <ul>
           <li>Nessun cliente proprio</li>
           <li>Tariffa fissata dalla scuola</li>
@@ -114,7 +137,7 @@
         <p class="eyebrow">Rango I</p>
         <h3>Base Camp</h3>
         <p><span class="state state-active">Completato</span></p>
-        <p>Ammissione in Gilda. Prima diagnosi onesta: quanto dipendi oggi dalla scuola, che asset hai già, dove puoi davvero iniziare a scalare.</p>
+        <p>Ammissione in Gilda. Prima diagnosi onesta: quanto dipendi oggi dalla scuola, che asset hai già, dove puoi davvero iniziare a salire.</p>
         <ul>
           <li>Colloquio d'ingresso in Gilda</li>
           <li>Valutazione asset attuali</li>
@@ -126,7 +149,7 @@
         <p class="eyebrow">Rango II</p>
         <h3>Fondamenta</h3>
         <p><span class="state state-active">In corso</span></p>
-        <p>Costruisci l'infrastruttura che serve per poter dire sì a un cliente diretto: senza questo, l'indipendenza resta solo un'idea.</p>
+        <p>Metti in piedi l'infrastruttura per poter dire sì a un cliente diretto. Senza questo, l'indipendenza resta solo un'idea.</p>
         <ul>
           <li>P.IVA attiva</li>
           <li>Assicurazione professionale</li>
@@ -138,7 +161,7 @@
         <p class="eyebrow">Rango III</p>
         <h3>Cordata</h3>
         <p><span class="state state-pending">Da raggiungere</span></p>
-        <p>Legati sulla stessa corda, ma ognuno con la propria linea: lavori ancora con la scuola, ma inizi a prendere clienti diretti in parallelo.</p>
+        <p>Lavori ancora con la scuola, ma inizi a prendere clienti diretti in parallelo. Stessa corda, linee diverse.</p>
         <ul>
           <li>Primi clienti diretti</li>
           <li>Reputazione propria (recensioni, passaparola)</li>
@@ -150,7 +173,7 @@
         <p class="eyebrow">Rango IV</p>
         <h3>Vetta</h3>
         <p><span class="state state-pending">Rango finale</span></p>
-        <p>Indipendenza reale: il flusso di clienti diretti basta a reggere l'attività. Da qui puoi anche rientrare in Gilda come mentore.</p>
+        <p>I clienti diretti bastano a reggere l'attività. Da qui puoi anche rientrare in Gilda come mentore.</p>
         <ul>
           <li>Flusso diretto sufficiente</li>
           <li>Validazione di un mentore della Gilda</li>
@@ -174,8 +197,8 @@
 
 <div class="big-statement">
   <div class="wrap">
-    <p>Non è una gara di velocità. <span class="accent">È una gara di solidità</span> —
-      <span class="dim">ogni rango che salti torna a chiederti il conto più avanti.</span></p>
+    <p>Non è una gara di velocità. <span class="accent">È una gara di solidità</span>:
+      <span class="dim">ogni rango che salti ti torna indietro più avanti.</span></p>
   </div>
 </div>
 
@@ -184,8 +207,8 @@
     <div class="section-head reveal">
       <span class="eyebrow">Cosa fa salire di rango</span>
       <h2>Criteri, non tempo passato in Gilda</h2>
-      <p>Per i primi ranghi bastano criteri oggettivi, verificabili da soli. Per l'ultimo
-        passo — diventare mentore — serve anche una validazione tra pari.</p>
+      <p>Nei primi ranghi bastano criteri oggettivi che puoi verificare da solo. Per l'ultimo
+        passo, diventare mentore, serve anche una validazione tra pari.</p>
     </div>
     <div class="giant-list reveal">
       <div class="giant-row">
@@ -200,8 +223,8 @@
         <span class="gi-num">02</span>
         <div class="gi-body">
           <h4>Rango IV: validazione tra pari</h4>
-          <p>Per il rango "Vetta" serve la conferma di un mentore della Gilda: il
-            rischio, a quel livello, è l'autoproclamazione.</p>
+          <p>Per la Vetta serve la conferma di un mentore della Gilda. A quel livello
+            il rischio è dichiararsi da soli.</p>
         </div>
       </div>
       <div class="giant-row">
@@ -221,15 +244,13 @@
     <div class="section-head reveal">
       <span class="eyebrow">Le vie della Gilda</span>
       <h2>Tre modi per entrare, a seconda di dove sei</h2>
-      <p>Scegli il punto d'ingresso più onesto rispetto alla tua situazione attuale —
-        non il più ambizioso.</p>
+      <p>Scegli l'ingresso più onesto rispetto a oggi, non quello che suona più ambizioso.</p>
     </div>
     <div class="service-grid stagger">
       <article class="service-card reveal" id="revisione">
         <span class="tag">Diagnosi</span>
         <h3>Revisione Indipendente</h3>
-        <p>Per chi vuole capire, prima di investire tempo o budget, dove il
-          proprio profilo e i propri processi perdono valore.</p>
+        <p>Per capire, prima di mettere tempo o soldi, dove profilo e processi perdono valore.</p>
         <ul>
           <li>Punti di forza reali</li>
           <li>Lacune commerciali</li>
@@ -241,8 +262,7 @@
       <article class="service-card reveal" id="affiancamento">
         <span class="tag">Attuazione</span>
         <h3>Affiancamento Operativo</h3>
-        <p>Per chi ha già chiaro cosa serve e vuole aiuto concreto per
-          trasformarlo in sistemi, messaggi e processi funzionanti.</p>
+        <p>Per chi sa già cosa serve e vuole aiuto concreto a trasformarlo in sistemi, messaggi e processi che reggono.</p>
         <ul>
           <li>Setup del profilo/offerta</li>
           <li>Messaggi e materiali cliente</li>
@@ -254,8 +274,7 @@
       <article class="service-card reveal" id="maestria">
         <span class="tag">Sviluppo</span>
         <h3>Percorso di Maestria</h3>
-        <p>Per chi vuole più struttura, direzione professionale e
-          autonomia nel lungo periodo, non solo una soluzione tattica.</p>
+        <p>Per chi vuole struttura e direzione nel tempo, non solo una pezza tattica.</p>
         <ul>
           <li>Fiducia professionale</li>
           <li>Direzione di carriera</li>
@@ -273,8 +292,8 @@
     <div class="cta-intro">
       <span class="eyebrow" style="justify-content:center;">Candidatura</span>
       <h2>Entra in Gilda su candidatura</h2>
-      <p>Non vendiamo posti a listino pubblico. Valutiamo dove sei oggi e ti
-        indichiamo il rango e la via d'ingresso più onesti.</p>
+      <p>Non vendiamo posti a listino pubblico. Guardiamo dove sei oggi e ti
+        indichiamo rango e via d'ingresso più onesti.</p>
     </div>
 
     <div class="criteria-box reveal">
@@ -342,11 +361,12 @@
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <img src="assets/img/crest-mark-white.png" alt="">
+          <img class="theme-dark-only" src="assets/img/crest-mark-white.png" alt="">
+          <img class="theme-light-only" src="assets/img/crest-mark-dark.png" alt="">
           <h5>The Crest Guild</h5>
         </div>
-        <p style="max-width:280px;">Il percorso per maestri di sci che vogliono passare
-          dalla scuola all'indipendenza, un rango alla volta.</p>
+        <p style="max-width:280px;">Per maestri di sci che vogliono uscire dal solo
+          modello scuola, un rango alla volta.</p>
       </div>
       <div>
         <h5>Percorso</h5>
@@ -370,7 +390,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 The Crest Guild — ArmoFlow Ltd</span>
+      <span>© 2026 The Crest Guild · ArmoFlow Ltd</span>
       <span class="foot-legal-links">
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>

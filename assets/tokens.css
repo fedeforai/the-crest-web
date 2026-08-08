@@ -1,11 +1,13 @@
 /* ============================================================
    THE CREST GUILD — brand tokens
    Onyx / Parchment / Gold (5% accent only). Flat, heraldic.
+   Theme: data-theme="dark" (default) | "light"
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;700&display=swap');
 
-:root{
+:root,
+html[data-theme="dark"]{
   /* Core palette */
   --color-onyx: #0B0B0C;
   --color-parchment: #F3EFE6;
@@ -30,7 +32,6 @@
   /* Text on surfaces */
   --text-on-onyx: #EDEAE1;
   --text-on-parchment: #161512;
-  /* Gold darkened for text/icons on parchment (passes WCAG AA ≥4.5:1) — never use --color-gold as text on light */
   --color-gold-on-parchment: #6B5228;
 
   /* Typography */
@@ -43,21 +44,53 @@
   --border-hairline: 0.5px solid var(--neutral-700);
   --max: 1200px;
 
-  /* ---------- Legacy aliases (keep existing CSS working) ---------- */
+  /* Semantic surfaces (dark default) */
   --canvas: var(--color-onyx);
+  --surface: var(--neutral-800);
+  --surface-elevated: var(--color-slate);
   --steel-dim: var(--color-slate);
   --border: var(--neutral-700);
   --neutral-1: var(--neutral-500);
   --neutral-2: var(--neutral-400);
   --ivory: var(--text-on-onyx);
+  --text: var(--text-on-onyx);
   --slate-muted: var(--neutral-500);
-  /* Gold replaces Summit Blue as the sole accent — never as large fill */
   --summit-blue: var(--color-gold);
   --state-expired: var(--color-error);
   --state-pending: var(--color-warning);
   --state-active: var(--color-success);
   --text-dim: color-mix(in srgb, var(--text-on-onyx) 78%, transparent);
   --text-dim2: color-mix(in srgb, var(--text-on-onyx) 58%, transparent);
+  --text-on-dark: var(--text-on-onyx);
+  --text-on-dark-dim: color-mix(in srgb, var(--text-on-onyx) 78%, transparent);
+  --text-on-dark-dim2: color-mix(in srgb, var(--text-on-onyx) 58%, transparent);
+  --accent-readable: var(--color-gold);
+  --glass-bg: rgba(43, 53, 64, 0.42);
+  --glass-border: rgba(241, 238, 230, 0.14);
   --sans: var(--font-body);
   --display: var(--font-display);
+}
+
+html[data-theme="light"]{
+  --canvas: var(--color-parchment);
+  --surface: #FFFcf6;
+  --surface-elevated: var(--neutral-200);
+  --steel-dim: var(--neutral-200);
+  --border: var(--neutral-300);
+  --border-hairline: 0.5px solid var(--neutral-300);
+  /* Page text on parchment */
+  --text: var(--text-on-parchment);
+  --text-dim: color-mix(in srgb, var(--text-on-parchment) 82%, transparent);
+  --text-dim2: color-mix(in srgb, var(--text-on-parchment) 68%, transparent);
+  /* Keep light ink for dark panels (trail-detail, seals, CTAs on onyx) */
+  --text-on-dark: #EDEAE1;
+  --text-on-dark-dim: color-mix(in srgb, #EDEAE1 78%, transparent);
+  --text-on-dark-dim2: color-mix(in srgb, #EDEAE1 58%, transparent);
+  --ivory: var(--text-on-parchment);
+  --accent-readable: var(--color-gold-on-parchment);
+  --summit-blue: var(--color-gold-on-parchment);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(22, 21, 18, 0.14);
+  --neutral-1: var(--neutral-600);
+  --neutral-2: var(--neutral-500);
 }

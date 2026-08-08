@@ -3,21 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ecosystem — The Crest Guild fa parte di ArmoFlow</title>
+<title>Ecosystem · The Crest Guild fa parte di ArmoFlow</title>
 <meta name="description" content="The Crest Guild è uno dei tre prodotti di ArmoFlow Ltd, insieme a FrostDesk e Vaelmont: come sono collegati e a chi servono.">
 <link rel="canonical" href="https://www.thecrestguild.com/ecosystem">
-<meta property="og:title" content="Ecosystem — The Crest Guild e ArmoFlow">
+<link rel="alternate" hreflang="it" href="https://www.thecrestguild.com/ecosystem.html">
+<link rel="alternate" hreflang="en" href="https://www.thecrestguild.com/en/ecosystem.html">
+<link rel="alternate" hreflang="fr" href="https://www.thecrestguild.com/fr/ecosystem.html">
+<link rel="alternate" hreflang="x-default" href="https://www.thecrestguild.com/">
+<meta property="og:title" content="Ecosystem · The Crest Guild e ArmoFlow">
 <meta property="og:description" content="The Crest Guild fa parte di ArmoFlow, insieme a FrostDesk e Vaelmont.">
 <meta property="og:url" content="https://www.thecrestguild.com/ecosystem">
 <meta property="og:image" content="https://www.thecrestguild.com/assets/img/crest-mark.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ecosystem — The Crest Guild e ArmoFlow">
+<meta name="twitter:title" content="Ecosystem · The Crest Guild e ArmoFlow">
 <meta name="twitter:description" content="The Crest Guild fa parte di ArmoFlow, insieme a FrostDesk e Vaelmont.">
 <meta name="twitter:image" content="https://www.thecrestguild.com/assets/img/crest-mark.png">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<script>
+(function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>
 <link rel="stylesheet" href="assets/style-guild.css">
 <script src="assets/config.js"></script>
 <script src="assets/analytics.js"></script>
@@ -29,7 +36,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest" src="assets/img/crest-mark-white.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="assets/img/crest-mark-white.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-light-only" src="assets/img/crest-mark-dark.png" alt="" width="28" height="34">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Principale">
@@ -40,6 +48,15 @@
       <a href="ecosystem.html" aria-current="page">Ecosystem</a>
     </nav>
     <div class="nav-right">
+      <div class="lang-switch" role="navigation" aria-label="Language">
+        <a href="ecosystem.html" aria-current="true" lang="it" hreflang="it">IT</a>
+        <a href="en/ecosystem.html" lang="en" hreflang="en">EN</a>
+        <a href="fr/ecosystem.html" lang="fr" hreflang="fr">FR</a>
+      </div>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambia tema chiaro o scuro" title="Theme">
+        <span class="theme-toggle-sun" aria-hidden="true">☀</span>
+        <span class="theme-toggle-moon" aria-hidden="true">☾</span>
+      </button>
       <a class="nav-cta" href="pathways.html#candidati" data-track="cta_click">Entra nella Gilda</a>
       <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -53,6 +70,12 @@
   <a href="quiz.html">Quiz</a>
   <a href="about.html">Chi Siamo</a>
   <a href="ecosystem.html" aria-current="page">Ecosystem</a>
+  <div class="lang-switch mn-lang" role="navigation" aria-label="Language">
+        <a href="ecosystem.html" aria-current="true" lang="it" hreflang="it">IT</a>
+        <a href="en/ecosystem.html" lang="en" hreflang="en">EN</a>
+        <a href="fr/ecosystem.html" lang="fr" hreflang="fr">FR</a>
+      </div>
+  <button type="button" class="theme-toggle mn-theme" data-theme-toggle aria-label="Cambia tema chiaro o scuro">Tema chiaro / scuro</button>
   <a class="mn-cta" href="pathways.html#candidati" data-track="cta_click">Entra nella Gilda</a>
 </div>
 
@@ -61,10 +84,9 @@
   <div class="wrap">
     <span class="eyebrow">Fa parte di qualcosa di più grande</span>
     <h1 style="font-size:clamp(32px,4.2vw,50px); margin-top:16px;">The Crest Guild è un<br>prodotto ArmoFlow.</h1>
-    <p class="lede">ArmoFlow Ltd costruisce sistemi operativi digitali per attività
-      basate sui servizi. Tre prodotti, stesso target — il professionista
-      indipendente del settore sci/outdoor — pensati per lavorare insieme lungo
-      tutto il ciclo di vita del servizio.</p>
+    <p class="lede">ArmoFlow Ltd costruisce sistemi operativi digitali per attività di
+      servizio. Tre prodotti, stesso pubblico: il professionista indipendente
+      nello sci e outdoor. Pensati per lavorare insieme lungo tutto il ciclo del servizio.</p>
   </div>
 </section>
 
@@ -82,20 +104,18 @@
         <span class="mark">FD</span>
         <h3>FrostDesk</h3>
         <span class="role">frostdesk.ai</span>
-        <p class="desc">AI booking per maestri di sci. Unisce WhatsApp e Gmail in
-          un'unica inbox, suggerisce risposte con l'AI e gestisce automaticamente
-          le prenotazioni a partire dalle conversazioni.</p>
+        <p class="desc">Prenotazioni con AI per maestri di sci. Unisce WhatsApp e Gmail in
+          un'unica inbox, suggerisce risposte e gestisce le prenotazioni dalle conversazioni.</p>
         <a data-track="outbound_click" class="eco-link" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">Vai a FrostDesk</a>
       </div>
 
       <div class="eco-card is-self reveal">
         <span class="eco-badge-self">Sei qui</span>
-        <span class="mark"><img src="assets/img/crest-mark-white.png" alt=""></span>
+        <span class="mark"><img class="theme-dark-only" src="assets/img/crest-mark-white.png" alt=""><img class="theme-light-only" src="assets/img/crest-mark-dark.png" alt=""></span>
         <h3>The Crest Guild</h3>
         <span class="role">Educazione e struttura</span>
-        <p class="desc">Struttura la tua professione, costruisci il tuo sistema.
-          Aiuta i maestri a diventare autonomi, coerenti e professionali, con
-          percorsi su misura sia per chi inizia che per chi ha più esperienza.</p>
+        <p class="desc">Struttura la professione e costruisci il tuo sistema.
+          Percorsi su misura per chi inizia e per chi ha già esperienza.</p>
         <a class="eco-link" href="pathways.html">Scopri i Ranghi</a>
       </div>
 
@@ -103,9 +123,8 @@
         <span class="mark">V</span>
         <h3>Vaelmont</h3>
         <span class="role">vaelmont.co.uk</span>
-        <p class="desc">Il tuo cliente, organizzato. La sua vacanza, curata. Gestione
-          concierge: raccoglie esperienze, pagamenti e recensioni per ogni
-          cliente in un unico posto.</p>
+        <p class="desc">Il tuo cliente organizzato, la sua vacanza curata. Concierge:
+          esperienze, pagamenti e recensioni in un unico posto.</p>
         <a data-track="outbound_click" class="eco-link" href="https://vaelmont.co.uk" target="_blank" rel="noopener noreferrer">Vai a Vaelmont</a>
       </div>
     </div>
@@ -115,14 +134,14 @@
       <span class="eco-flow-arrow">→</span>
       <span class="eco-flow-node">FrostDesk</span>
     </div>
-    <p class="eco-flow-caption">L'unico passaggio esplicitamente consigliato: la Gilda ti forma,
-      FrostDesk è lo strumento operativo con cui lavori ogni giorno da indipendente.</p>
+    <p class="eco-flow-caption">Il passaggio che consigliamo: la Gilda ti forma, FrostDesk è lo
+      strumento con cui lavori ogni giorno da indipendente.</p>
   </div>
 </section>
 
 <div class="big-statement">
   <div class="wrap">
-    <p>Tre prodotti, <span class="accent">una sola persona da servire</span> —
+    <p>Tre prodotti, <span class="accent">una sola persona da servire</span>:
       <span class="dim">il maestro di sci che vuole smettere di dipendere da qualcun altro.</span></p>
   </div>
 </div>
@@ -134,31 +153,28 @@
     <div class="section-head reveal">
       <span class="eyebrow">Chi c'è dietro</span>
       <h2>ArmoFlow Ltd</h2>
-      <p>La società che possiede e sviluppa tutti e tre i prodotti. Il nome
-        "ArmoFlow" compare nel sito istituzionale, nei materiali corporate e
-        nelle comunicazioni ufficiali — non sostituisce mai il nome del singolo
-        prodotto quando parli con un maestro o un cliente.</p>
+      <p>La società che possiede e sviluppa i tre prodotti. "ArmoFlow" compare
+        sul sito istituzionale e nelle comunicazioni ufficiali. Non sostituisce
+        mai il nome del prodotto quando parli con un maestro o un cliente.</p>
     </div>
     <div class="cards stagger">
       <div class="card reveal">
         <span class="tag">Entità legale</span>
         <h3>ArmoFlow Ltd</h3>
-        <p class="desc">Usato su contratti, fatture e ogni comunicazione ufficiale.
+        <p class="desc">Usato su contratti, fatture e comunicazioni ufficiali.
           Software operativo per attività di servizio moderne.</p>
       </div>
       <div class="card reveal">
         <span class="tag">Perché tre marchi</span>
         <h3>Un prodotto, un contesto</h3>
-        <p class="desc">Ogni prodotto ha un tono diverso perché risolve un
-          problema diverso: FrostDesk è operativo, la Gilda è educativa,
-          Vaelmont è premium e orientato al cliente finale.</p>
+        <p class="desc">Ogni prodotto ha un tono diverso perché risolve un problema diverso.
+          FrostDesk è operativo, la Gilda è educativa, Vaelmont è premium e rivolto al cliente finale.</p>
       </div>
       <div class="card reveal">
         <span class="tag">Dove vai dopo</span>
         <h3>Il percorso naturale</h3>
-        <p class="desc">Entri in Gilda per costruire le fondamenta. Una volta
-          pronto, FrostDesk è lo strumento che ti fa gestire clienti diretti
-          senza tornare al caos.</p>
+        <p class="desc">Entri in Gilda per le fondamenta. Quando sei pronto, FrostDesk ti
+          fa gestire i clienti diretti senza tornare al caos.</p>
       </div>
     </div>
   </div>
@@ -168,7 +184,7 @@
   <div class="wrap">
     <span class="eyebrow" style="justify-content:center;">Inizia da qui</span>
     <h2>Il percorso comincia in Gilda</h2>
-    <p>Prima la struttura, poi lo strumento. È in quest'ordine che funziona meglio.</p>
+    <p>Prima la struttura, poi lo strumento. In quest'ordine funziona meglio.</p>
     <a class="btn btn-primary" href="pathways.html" data-track="cta_click">Scopri i Ranghi</a>
   </div>
 </section>
@@ -190,11 +206,12 @@
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <img src="assets/img/crest-mark-white.png" alt="">
+          <img class="theme-dark-only" src="assets/img/crest-mark-white.png" alt="">
+          <img class="theme-light-only" src="assets/img/crest-mark-dark.png" alt="">
           <h5>The Crest Guild</h5>
         </div>
-        <p style="max-width:280px;">Il percorso per maestri di sci che vogliono passare
-          dalla scuola all'indipendenza, un rango alla volta.</p>
+        <p style="max-width:280px;">Per maestri di sci che vogliono uscire dal solo
+          modello scuola, un rango alla volta.</p>
       </div>
       <div>
         <h5>Percorso</h5>
@@ -219,7 +236,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 The Crest Guild — ArmoFlow Ltd</span>
+      <span>© 2026 The Crest Guild · ArmoFlow Ltd</span>
       <span class="foot-legal-links">
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>

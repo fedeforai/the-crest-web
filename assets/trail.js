@@ -3,38 +3,115 @@
   var staticEl = document.getElementById('rankStaticContent');
   if (staticEl) staticEl.style.display = 'none';
 
-  var RANKS = [
-    {
-      id: 0, tag: "Punto di partenza", label: "In Scuola", state: "done",
-      title: "In Scuola", stateLabel: "Fuori dalla Gilda",
-      desc: "Lavori solo tramite la scuola sci: clienti, tariffe e calendario decisi da altri. È il punto da cui parte chiunque entri in Gilda.",
-      items: ["Nessun cliente proprio", "Tariffa fissata dalla scuola", "Calendario deciso da altri", "Zero rischio, zero indipendenza"]
+  var lang = (document.documentElement.lang || 'it').slice(0, 2).toLowerCase();
+  if (lang !== 'en' && lang !== 'fr') lang = 'it';
+
+  var COPY = {
+    it: {
+      ranks: [
+        {
+          id: 0, tag: "Punto di partenza", label: "In Scuola", state: "done",
+          title: "In Scuola", stateLabel: "Fuori dalla Gilda",
+          desc: "Lavori solo tramite la scuola sci: clienti, tariffe e calendario decisi da altri. È da qui che parte chiunque entri in Gilda.",
+          items: ["Nessun cliente proprio", "Tariffa fissata dalla scuola", "Calendario deciso da altri", "Zero rischio, zero indipendenza"]
+        },
+        {
+          id: 1, tag: "Rango I", label: "Base Camp", state: "done",
+          title: "Base Camp", stateLabel: "Completato",
+          desc: "Ammissione in Gilda. Prima diagnosi onesta: quanto dipendi oggi dalla scuola, che asset hai già, dove puoi davvero iniziare a salire.",
+          items: ["Colloquio d'ingresso in Gilda", "Valutazione asset attuali", "Piano di risalita personalizzato", "Accesso alla community dei maestri"]
+        },
+        {
+          id: 2, tag: "Rango II", label: "Fondamenta", state: "current",
+          title: "Fondamenta", stateLabel: "In corso",
+          desc: "Metti in piedi l'infrastruttura per poter dire sì a un cliente diretto. Senza questo, l'indipendenza resta solo un'idea.",
+          items: ["P.IVA attiva", "Assicurazione professionale", "Sistema di prenotazione tuo", "Listino prezzi personale"]
+        },
+        {
+          id: 3, tag: "Rango III", label: "Cordata", state: "locked",
+          title: "Cordata", stateLabel: "Da raggiungere",
+          desc: "Lavori ancora con la scuola, ma inizi a prendere clienti diretti in parallelo. Stessa corda, linee diverse.",
+          items: ["Primi clienti diretti", "Reputazione propria (recensioni, passaparola)", "Gestione doppio canale", "Primi confronti di prezzo reali"]
+        },
+        {
+          id: 4, tag: "Rango IV", label: "Vetta", state: "locked",
+          title: "Vetta", stateLabel: "Rango finale",
+          desc: "I clienti diretti bastano a reggere l'attività. Da qui puoi anche rientrare in Gilda come mentore.",
+          items: ["Flusso diretto sufficiente", "Validazione di un mentore della Gilda", "Possibilità di diventare mentore", "Nome e reputazione indipendenti dalla scuola"]
+        }
+      ]
     },
-    {
-      id: 1, tag: "Rango I", label: "Base Camp", state: "done",
-      title: "Base Camp", stateLabel: "Completato",
-      desc: "Ammissione in Gilda. Prima diagnosi onesta: quanto dipendi oggi dalla scuola, che asset hai già, dove puoi davvero iniziare a scalare.",
-      items: ["Colloquio d'ingresso in Gilda", "Valutazione asset attuali", "Piano di risalita personalizzato", "Accesso alla community dei maestri"]
+    en: {
+      ranks: [
+        {
+          id: 0, tag: "Starting point", label: "In School", state: "done",
+          title: "In School", stateLabel: "Outside the Guild",
+          desc: "You work only through the ski school: clients, rates, and schedule decided by someone else. This is where everyone who joins the Guild starts.",
+          items: ["No clients of your own", "Rate set by the school", "Schedule decided by others", "Zero risk, zero independence"]
+        },
+        {
+          id: 1, tag: "Rank I", label: "Base Camp", state: "done",
+          title: "Base Camp", stateLabel: "Completed",
+          desc: "Admission to the Guild. First honest assessment: how much you depend on the school today, what assets you already have, where you can realistically start climbing.",
+          items: ["Guild entry interview", "Assessment of current assets", "Personalised progression plan", "Access to the instructor community"]
+        },
+        {
+          id: 2, tag: "Rank II", label: "Foundations", state: "current",
+          title: "Foundations", stateLabel: "In progress",
+          desc: "You put in place the infrastructure to say yes to a direct client. Without it, independence stays just an idea.",
+          items: ["Active business registration", "Professional insurance", "Your own booking system", "Your own price list"]
+        },
+        {
+          id: 3, tag: "Rank III", label: "Rope Team", state: "locked",
+          title: "Rope Team", stateLabel: "Still to reach",
+          desc: "You still work with the school, but start taking direct clients in parallel. Same rope, different lines.",
+          items: ["First direct clients", "Your own reputation (reviews, word of mouth)", "Managing two channels", "First real pricing comparisons"]
+        },
+        {
+          id: 4, tag: "Rank IV", label: "Summit", state: "locked",
+          title: "Summit", stateLabel: "Final rank",
+          desc: "Direct clients are enough to sustain the business. From here you can also come back to the Guild as a mentor.",
+          items: ["Sufficient direct flow", "Validation from a Guild mentor", "Possibility of becoming a mentor", "Name and reputation independent of the school"]
+        }
+      ]
     },
-    {
-      id: 2, tag: "Rango II", label: "Fondamenta", state: "current",
-      title: "Fondamenta", stateLabel: "In corso",
-      desc: "Costruisci l'infrastruttura che serve per poter dire sì a un cliente diretto: senza questo, l'indipendenza resta solo un'idea.",
-      items: ["P.IVA attiva", "Assicurazione professionale", "Sistema di prenotazione tuo", "Listino prezzi personale"]
-    },
-    {
-      id: 3, tag: "Rango III", label: "Cordata", state: "locked",
-      title: "Cordata", stateLabel: "Da raggiungere",
-      desc: "Legati sulla stessa corda, ma ognuno con la propria linea: lavori ancora con la scuola, ma inizi a prendere clienti diretti in parallelo.",
-      items: ["Primi clienti diretti", "Reputazione propria (recensioni, passaparola)", "Gestione doppio canale", "Primi confronti di prezzo reali"]
-    },
-    {
-      id: 4, tag: "Rango IV", label: "Vetta", state: "locked",
-      title: "Vetta", stateLabel: "Rango finale",
-      desc: "Indipendenza reale: il flusso di clienti diretti basta a reggere l'attività. Da qui puoi anche rientrare in Gilda come mentore.",
-      items: ["Flusso diretto sufficiente", "Validazione di un mentore della Gilda", "Possibilità di diventare mentore", "Nome e reputazione indipendenti dalla scuola"]
+    fr: {
+      ranks: [
+        {
+          id: 0, tag: "Point de départ", label: "À l'École", state: "done",
+          title: "À l'École", stateLabel: "Hors de la Guilde",
+          desc: "Vous travaillez uniquement via l'école de ski : clients, tarifs et planning décidés par d'autres. C'est le point de départ de quiconque rejoint la Guilde.",
+          items: ["Aucun client propre", "Tarif fixé par l'école", "Planning décidé par d'autres", "Zéro risque, zéro indépendance"]
+        },
+        {
+          id: 1, tag: "Rang I", label: "Camp de Base", state: "done",
+          title: "Camp de Base", stateLabel: "Terminé",
+          desc: "Admission dans la Guilde. Premier bilan honnête : à quel point vous dépendez de l'école aujourd'hui, quels atouts vous avez déjà, où vous pouvez réellement commencer à grimper.",
+          items: ["Entretien d'entrée dans la Guilde", "Évaluation des atouts actuels", "Plan de progression personnalisé", "Accès à la communauté des moniteurs"]
+        },
+        {
+          id: 2, tag: "Rang II", label: "Fondations", state: "current",
+          title: "Fondations", stateLabel: "En cours",
+          desc: "Vous mettez en place l'infrastructure pour pouvoir dire oui à un client direct. Sans cela, l'indépendance reste une simple idée.",
+          items: ["Immatriculation active", "Assurance professionnelle", "Votre propre système de réservation", "Votre propre grille tarifaire"]
+        },
+        {
+          id: 3, tag: "Rang III", label: "Cordée", state: "locked",
+          title: "Cordée", stateLabel: "À atteindre",
+          desc: "Vous travaillez encore avec l'école, mais commencez à prendre des clients directs en parallèle. Même corde, voies différentes.",
+          items: ["Premiers clients directs", "Votre propre réputation (avis, bouche-à-oreille)", "Gestion de deux canaux", "Premières comparaisons de prix réelles"]
+        },
+        {
+          id: 4, tag: "Rang IV", label: "Sommet", state: "locked",
+          title: "Sommet", stateLabel: "Rang final",
+          desc: "Les clients directs suffisent à faire vivre l'activité. À partir d'ici, vous pouvez aussi revenir dans la Guilde comme mentor.",
+          items: ["Flux direct suffisant", "Validation d'un mentor de la Guilde", "Possibilité de devenir mentor", "Nom et réputation indépendants de l'école"]
+        }
+      ]
     }
-  ];
+  };
+
+  var RANKS = COPY[lang].ranks;
 
   var nodesEl = document.getElementById('trailNodes');
   var detailEl = document.getElementById('trailDetail');
@@ -112,6 +189,15 @@
     r.items.forEach(function(i){ ul.appendChild(el('li', { text: i })); });
     detailEl.appendChild(ul);
     render(id);
+
+    var activeBtn = document.getElementById('trail-tab-' + id);
+    if (activeBtn && typeof activeBtn.scrollIntoView === 'function') {
+      try {
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      } catch (e) {
+        activeBtn.scrollIntoView(false);
+      }
+    }
   }
 
   showDetail(2);

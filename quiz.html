@@ -3,21 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz di posizionamento — The Crest Guild</title>
+<title>Quiz di posizionamento · The Crest Guild</title>
 <meta name="description" content="Scopri da che rango parti e dove puoi arrivare nel percorso verso l'indipendenza da maestro di sci.">
 <link rel="canonical" href="https://www.thecrestguild.com/quiz">
-<meta property="og:title" content="Quiz di posizionamento — The Crest Guild">
+<link rel="alternate" hreflang="it" href="https://www.thecrestguild.com/quiz.html">
+<link rel="alternate" hreflang="en" href="https://www.thecrestguild.com/en/quiz.html">
+<link rel="alternate" hreflang="fr" href="https://www.thecrestguild.com/fr/quiz.html">
+<link rel="alternate" hreflang="x-default" href="https://www.thecrestguild.com/">
+<meta property="og:title" content="Quiz di posizionamento · The Crest Guild">
 <meta property="og:description" content="Scopri da che rango parti nel percorso verso l'indipendenza da maestro di sci.">
 <meta property="og:url" content="https://www.thecrestguild.com/quiz">
 <meta property="og:image" content="https://www.thecrestguild.com/assets/img/crest-mark.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Quiz di posizionamento — The Crest Guild">
+<meta name="twitter:title" content="Quiz di posizionamento · The Crest Guild">
 <meta name="twitter:description" content="Scopri da che rango parti nel percorso verso l'indipendenza da maestro di sci.">
 <meta name="twitter:image" content="https://www.thecrestguild.com/assets/img/crest-mark.png">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<script>
+(function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>
 <link rel="stylesheet" href="assets/style-guild.css">
 <script src="assets/config.js"></script>
 <script src="assets/analytics.js"></script>
@@ -61,7 +68,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest" src="assets/img/crest-mark-white.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="assets/img/crest-mark-white.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-light-only" src="assets/img/crest-mark-dark.png" alt="" width="28" height="34">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Principale">
@@ -72,6 +80,15 @@
       <a href="ecosystem.html">Ecosystem</a>
     </nav>
     <div class="nav-right">
+      <div class="lang-switch" role="navigation" aria-label="Language">
+        <a href="quiz.html" aria-current="true" lang="it" hreflang="it">IT</a>
+        <a href="en/quiz.html" lang="en" hreflang="en">EN</a>
+        <a href="fr/quiz.html" lang="fr" hreflang="fr">FR</a>
+      </div>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Cambia tema chiaro o scuro" title="Theme">
+        <span class="theme-toggle-sun" aria-hidden="true">☀</span>
+        <span class="theme-toggle-moon" aria-hidden="true">☾</span>
+      </button>
       <a class="nav-cta" href="pathways.html#candidati" data-track="cta_click">Entra nella Gilda</a>
       <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
@@ -85,13 +102,19 @@
   <a href="quiz.html" aria-current="page">Quiz</a>
   <a href="about.html">Chi Siamo</a>
   <a href="ecosystem.html">Ecosystem</a>
+  <div class="lang-switch mn-lang" role="navigation" aria-label="Language">
+        <a href="quiz.html" aria-current="true" lang="it" hreflang="it">IT</a>
+        <a href="en/quiz.html" lang="en" hreflang="en">EN</a>
+        <a href="fr/quiz.html" lang="fr" hreflang="fr">FR</a>
+      </div>
+  <button type="button" class="theme-toggle mn-theme" data-theme-toggle aria-label="Cambia tema chiaro o scuro">Tema chiaro / scuro</button>
   <a class="mn-cta" href="pathways.html#candidati">Entra nella Gilda</a>
 </div>
 
 <main id="main">
 <section class="hero" style="padding-top:112px; padding-bottom:40px;">
   <div class="wrap">
-    <span class="eyebrow">Due minuti, nessuna registrazione alle domande</span>
+    <span class="eyebrow">Due minuti. Nessuna registrazione alle domande.</span>
     <h1 style="font-size:clamp(30px,4vw,46px); margin-top:16px;">Da dove parti,<br>dove vuoi arrivare.</h1>
     <p class="lede">Cinque domande per capire il tuo rango di partenza nella Gilda
       e il passo più utile da fare adesso.</p>
@@ -162,11 +185,12 @@
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <img src="assets/img/crest-mark-white.png" alt="">
+          <img class="theme-dark-only" src="assets/img/crest-mark-white.png" alt="">
+          <img class="theme-light-only" src="assets/img/crest-mark-dark.png" alt="">
           <h5>The Crest Guild</h5>
         </div>
-        <p style="max-width:280px;">Il percorso per maestri di sci che vogliono passare
-          dalla scuola all'indipendenza, un rango alla volta.</p>
+        <p style="max-width:280px;">Per maestri di sci che vogliono uscire dal solo
+          modello scuola, un rango alla volta.</p>
       </div>
       <div>
         <h5>Percorso</h5>
@@ -189,7 +213,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 The Crest Guild — ArmoFlow Ltd</span>
+      <span>© 2026 The Crest Guild · ArmoFlow Ltd</span>
       <span class="foot-legal-links">
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
