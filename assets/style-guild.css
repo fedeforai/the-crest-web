@@ -450,6 +450,8 @@ body.intro-lock{ overflow:hidden; }
   font-size:11px; line-height:1.6; color:var(--text-dim2);
 }
 .rank-invite-cta{
+  display:flex;
+  align-items:center;
   width:100%;
   justify-content:center;
   text-align:center;
