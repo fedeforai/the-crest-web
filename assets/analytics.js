@@ -99,8 +99,8 @@
     ));
     var priv = document.createElement('a');
     priv.className = 'text-link';
-    priv.href = 'privacy.html';
-    priv.textContent = 'Privacy policy';
+    priv.href = 'cookies.html';
+    priv.textContent = 'Cookie policy';
     body.appendChild(priv);
 
     var actions = document.createElement('div');
@@ -152,6 +152,20 @@
       buildBanner();
     }
   }
+
+  // Cookie settings link in footer — clear choice and show banner again
+  document.addEventListener('click', function (e) {
+    var settings = e.target.closest('[data-cookie-settings]');
+    if (!settings) return;
+    e.preventDefault();
+    try { localStorage.removeItem(STORAGE_KEY); } catch (err) { /* ignore */ }
+    denyAnalytics();
+    var existing = document.getElementById('consentBanner');
+    if (existing) existing.remove();
+    buildBanner();
+    var banner = document.getElementById('consentBanner');
+    if (banner && banner.scrollIntoView) banner.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  });
 
   // Outbound + data-track clicks (events only fire meaningfully after grant)
   document.addEventListener('click', function (e) {

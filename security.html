@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security — The Crest Guild</title>
+<meta name="description" content="Technical and organisational security measures for thecrestguild.com and the application process.">
+<link rel="canonical" href="https://www.thecrestguild.com/security">
+<meta property="og:title" content="Security — The Crest Guild">
+<meta property="og:description" content="Technical and organisational security measures for thecrestguild.com and the application process.">
+<meta property="og:url" content="https://www.thecrestguild.com/security">
+<meta property="og:image" content="https://www.thecrestguild.com/assets/img/crest-mark.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Security — The Crest Guild">
+<meta name="twitter:description" content="Technical and organisational security measures for thecrestguild.com and the application process.">
+<meta name="twitter:image" content="https://www.thecrestguild.com/assets/img/crest-mark.png">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style-guild.css">
+<script src="assets/config.js"></script>
+<script src="assets/analytics.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="The Crest Guild">
+      <img class="brand-crest" src="assets/img/crest-mark-white.png" alt="" width="28" height="34">
+      <span class="brand-name">The Crest Guild</span>
+    </a>
+    <nav class="navlinks" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="pathways.html">I Ranghi</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="about.html">Chi Siamo</a>
+      <a href="ecosystem.html">Ecosystem</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="pathways.html#candidati" data-track="cta_click">Entra nella Gilda</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="pathways.html">I Ranghi</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="about.html">Chi Siamo</a>
+  <a href="ecosystem.html">Ecosystem</a>
+  <a class="mn-cta" href="pathways.html#candidati">Entra nella Gilda</a>
+</div>
+
+<main id="main">
+<section class="hero" style="padding-top:112px; padding-bottom:56px;">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1 style="font-size:clamp(32px,4.2vw,50px); margin-top:16px; max-width:720px;">Security</h1>
+    <p class="lede">How we keep thecrestguild.com and the application process secure.</p>
+    <p style="margin-top:12px; color:var(--text-dim2); font-size:13px;">Effective / last updated: 8 August 2026</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <article class="legal">
+<p>This page describes the technical and organisational measures ArmoFlow Ltd uses to keep thecrestguild.com and the application process secure. The Crest Guild currently runs on simpler infrastructure than FrostDesk (no user accounts, no database of customer messages), and this page reflects that accurately rather than describing measures that don't yet apply here.</p>
+<h2>1. Infrastructure and hosting</h2>
+<ul><li>thecrestguild.com is a static website hosted on <strong>Vercel</strong>.</li><li>Application and quiz-result submissions are handled by <strong>Formspree</strong>, a third-party form-processing service (note: FrostDesk/armoflow.com uses Resend for this — The Crest Guild specifically uses Formspree). We do not run our own database of applications at this time. [DA CONFERMARE se in futuro verrà introdotto un sistema di gestione candidature con database proprio — questa pagina andrà aggiornata di conseguenza]</li><li>Source code is version-controlled via GitHub, with access restricted to authorised team members.</li></ul>
+<h2>2. Encryption</h2>
+<ul><li>All traffic between your browser and thecrestguild.com is encrypted via HTTPS/TLS (provided by Vercel).</li><li>We do not currently store personal data in our own database — submitted form/application data is transmitted securely to Formspree, which maintains its own security programme (see <a class="text-link" href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a>).</li><li>Payment data, once a paid stage of the programme is live, will never be stored on our own servers — payment processing will be handled by a PCI-DSS compliant provider. [DA CONFERMARE quando il pagamento sarà attivo]</li></ul>
+<h2>3. Access control</h2>
+<ul><li>Access to the website's source repository and hosting/deployment configuration is restricted to authorised ArmoFlow personnel on a least-privilege basis.</li><li>We use unique credentials and, where supported, multi-factor authentication (MFA) for access to GitHub and Vercel.</li><li>The Crest Guild does not currently have user accounts or passwords for applicants/Members — access to the application form does not require authentication. [DA CONFERMARE se in futuro verrà introdotta un'area membri con login]</li></ul>
+<h2>4. Monitoring and incident response</h2>
+<ul><li>We maintain a general incident response process covering identification, containment, investigation, notification, and remediation of security incidents.</li><li>In the event of a personal data breach that poses a risk to individuals, we will notify the ICO within 72 hours where required by UK GDPR, and notify affected individuals without undue delay.</li><li>We do not currently run dedicated error/performance monitoring tooling on The Crest Guild (FrostDesk uses Sentry for this); this may be added as the Service grows. [DA CONFERMARE]</li></ul>
+<h2>5. Third-party risk management</h2>
+<p>We select third-party providers (currently: Vercel for hosting, Formspree for form processing, Google Analytics for website analytics) and review their security and data protection commitments before integration. A current list is available in our Privacy Policy.</p>
+<h2>6. Data minimisation</h2>
+<p>We collect only the data needed to evaluate applications, deliver quiz results, and run the website — see our Privacy Policy for full detail.</p>
+<h2>7. Secure development practices</h2>
+<ul><li>Changes to the website are reviewed before deployment to production.</li><li>Access to the source repository and deployment pipeline is restricted and logged via GitHub and Vercel's own access controls.</li></ul>
+<h2>8. Reporting a security issue</h2>
+<p>If you discover a security vulnerability or have concerns about the security of thecrestguild.com, please contact us at <strong>hello@armoflow.com</strong>. We take all reports seriously and will investigate promptly. We ask that you report responsibly and avoid accessing or modifying data that isn't yours.</p>
+<h2>9. Contact</h2>
+<p>ArmoFlow Ltd Email: <strong>hello@armoflow.com</strong> Registered address: 167-169 Great Portland Street, London, England, W1W 5PF</p>
+    </article>
+  </div>
+</section>
+</main>
+
+<div class="eco-strip">
+  <div class="wrap">
+    <div class="eco-strip-label"><b>The Crest Guild</b> è un prodotto della famiglia ArmoFlow</div>
+    <div class="eco-strip-links">
+      <a href="https://armoflow.com" target="_blank" rel="noopener noreferrer">ArmoFlow</a>
+      <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
+      <a data-track="outbound_click" href="https://vaelmont.co.uk" target="_blank" rel="noopener noreferrer">Vaelmont</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/img/crest-mark-white.png" alt="">
+          <h5>The Crest Guild</h5>
+        </div>
+        <p style="max-width:280px;">Il percorso per maestri di sci che vogliono passare
+          dalla scuola all'indipendenza, un rango alla volta.</p>
+      </div>
+      <div>
+        <h5>Percorso</h5>
+        <a href="pathways.html">I Ranghi</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">Chi Siamo</a>
+      </div>
+      <div>
+        <h5>Ecosystem ArmoFlow</h5>
+        <a href="ecosystem.html">Come sono collegati i prodotti</a>
+        <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="security.html" aria-current="page">Security</a>
+        <a href="#" data-cookie-settings>Preferenze cookie</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 The Crest Guild — ArmoFlow Ltd</span>
+      <span class="foot-legal-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="security.html">Security</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/forms.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

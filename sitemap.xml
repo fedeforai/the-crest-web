@@ -6,4 +6,8 @@
   <url><loc>https://www.thecrestguild.com/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.thecrestguild.com/ecosystem</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.thecrestguild.com/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.thecrestguild.com/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.thecrestguild.com/cookies</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.thecrestguild.com/security</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://www.thecrestguild.com/legal</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>

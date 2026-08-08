@@ -1203,6 +1203,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   color:var(--ivory);
 }
 .legal h2:first-child{ margin-top:0; }
+.legal h3{
+  font-family:var(--font-body);
+  font-weight:500;
+  font-size:16px;
+  margin:24px 0 10px;
+  color:var(--ivory);
+}
 .legal p, .legal li{
   color:var(--text-dim);
   font-size:15px;
@@ -1212,3 +1219,35 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .legal ul{ margin:0 0 16px; padding-left:1.2em; }
 .legal li{ margin-bottom:8px; }
 .legal strong{ color:var(--ivory); font-weight:500; }
+.legal-table-wrap{
+  overflow-x:auto;
+  margin:16px 0 24px;
+  border:0.5px solid var(--border);
+  border-radius:var(--radius-md);
+}
+.legal-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13.5px;
+}
+.legal-table th,
+.legal-table td{
+  text-align:left;
+  vertical-align:top;
+  padding:12px 14px;
+  border-bottom:0.5px solid var(--border);
+  color:var(--text-dim);
+  line-height:1.45;
+}
+.legal-table th{
+  color:var(--text-on-onyx);
+  font-weight:500;
+  background:var(--color-slate);
+}
+.legal-table tr:last-child td{ border-bottom:none; }
+.foot-legal-links{
+  display:flex; flex-wrap:wrap; gap:14px;
+  font-size:12.5px;
+}
+.foot-legal-links a{ color:var(--text-dim2); }
+.foot-legal-links a:hover{ color:var(--text-on-onyx); }
