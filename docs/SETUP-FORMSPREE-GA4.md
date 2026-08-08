@@ -14,8 +14,9 @@ Apri il progetto **THE CREST** su [formspree.io](https://formspree.io).
 ### Impostazioni progetto (una volta)
 
 1. Vai su **Project settings**
-2. **Restrict to Domain:** `thecrestguild.com`  
-   (senza `https://`; se i submit da www falliscono, usa `www.thecrestguild.com`)
+2. **Restrict to Domain:** sul piano free spesso **non è modificabile** — ok.
+   I form funzionano comunque da `www.thecrestguild.com`. Quando passerai di piano,
+   imposta `thecrestguild.com` / `www.thecrestguild.com`.
 3. **Non** mettere il Deploy Key nel codice / README / chat
 
 ### Form A — `candidatura`

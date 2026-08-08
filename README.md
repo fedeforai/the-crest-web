@@ -19,9 +19,11 @@ Config: [`assets/config.js`](assets/config.js)
 
 1. **Formspree** — collegato
    - Candidatura: `mbgrdkbz` · Quiz lead: `mjybgozj`
-   - Restrict Domain: `thecrestguild.com` (da impostare in dashboard)
-2. **GA4** — pending Measurement ID in `GA4_MEASUREMENT_ID`
+   - Domain restrict: non disponibile sul piano free (ok)
+2. **GA4** — attivo: `G-5M9YNQHV9T`
 3. **Email footer:** `fed@armoflow.com`
+
+Finché non vedi eventi in Realtime, fai hard refresh sul live e controlla adblock.
 
 Checklist go-live: [`docs/GO-LIVE-CHECKLIST.md`](docs/GO-LIVE-CHECKLIST.md)  
 Formspree/GA4: [`docs/SETUP-FORMSPREE-GA4.md`](docs/SETUP-FORMSPREE-GA4.md)  

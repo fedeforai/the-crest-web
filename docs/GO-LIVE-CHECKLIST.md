@@ -11,14 +11,14 @@ GA4: ancora da creare (incolla il `G-…` in chat).
 ## 1. Formspree (tu — 2 min)
 
 1. Apri https://formspree.io → progetto **THE CREST** → **Project settings**
-2. **Restrict to Domain:** `thecrestguild.com`  
-   (se il campo accetta un solo host, usa `thecrestguild.com`; il sito fa redirect apex→www, ma i form partono da `www` — se i submit falliscono, prova `www.thecrestguild.com` o chiedi a Formspree supporto multi-domain)
+2. **Restrict to Domain:** sul piano **free** Formspree non permette di cambiarlo — lascia così.
+   I form live funzionano lo stesso. (Upgrade = puoi limitare a `thecrestguild.com`.)
 3. Notifiche → `fed@armoflow.com`
 4. Test da **https://www.thecrestguild.com/pathways#candidati** (una candidatura)
 5. Test quiz → email gate su **https://www.thecrestguild.com/quiz**
 6. Controlla inbox Formspree + email
 
-Segna fatto: [ ]
+Segna fatto: [ ] (domain restrict free = N/A)
 
 ---
 
