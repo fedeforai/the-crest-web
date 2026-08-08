@@ -9,7 +9,16 @@
     if (!el) return;
     el.hidden = !message;
     el.className = 'form-status' + (type ? ' is-' + type : '');
-    el.textContent = message || '';
+    while (el.firstChild) el.removeChild(el.firstChild);
+    if (type === 'success') {
+      var badge = document.createElement('span');
+      badge.className = 'state state-active';
+      badge.textContent = 'Inviato';
+      el.appendChild(badge);
+      el.appendChild(document.createTextNode(' ' + (message || '')));
+    } else {
+      el.textContent = message || '';
+    }
     el.setAttribute('role', type === 'error' ? 'alert' : 'status');
   }
 

@@ -1,5 +1,8 @@
 /* The Crest Guild — placement quiz */
 (function () {
+  var staticEl = document.getElementById('quizStaticContent');
+  if (staticEl) staticEl.style.display = 'none';
+
   var RANKS = [
     { label: "In Scuola", title: "In Scuola", desc: "Lavori solo tramite la scuola sci: clienti, tariffe e calendario decisi da altri." },
     { label: "Base Camp", title: "Base Camp", desc: "Hai fatto il primo passo, ma le fondamenta per lavorare in proprio non ci sono ancora." },

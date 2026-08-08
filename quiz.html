@@ -5,10 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz di posizionamento — The Crest Guild</title>
 <meta name="description" content="Scopri da che rango parti e dove puoi arrivare nel percorso verso l'indipendenza da maestro di sci.">
+<link rel="canonical" href="https://www.thecrestguild.com/quiz">
+<meta property="og:title" content="Quiz di posizionamento — The Crest Guild">
+<meta property="og:description" content="Scopri da che rango parti nel percorso verso l'indipendenza da maestro di sci.">
+<meta property="og:url" content="https://www.thecrestguild.com/quiz">
+<meta property="og:image" content="https://www.thecrestguild.com/assets/img/crest-mark.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quiz di posizionamento — The Crest Guild">
+<meta name="twitter:description" content="Scopri da che rango parti nel percorso verso l'indipendenza da maestro di sci.">
+<meta name="twitter:image" content="https://www.thecrestguild.com/assets/img/crest-mark.png">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/style-guild.css">
 <script src="assets/config.js"></script>
 <script src="assets/analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hai la P.IVA attiva?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Il quiz valuta se hai già una P.IVA attiva come passo verso l'indipendenza."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hai un sistema di prenotazione tuo, separato da quello della scuola?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Avere un canale proprio (anche WhatsApp/calendario) è un criterio di rango nella Gilda."}
+    },
+    {
+      "@type": "Question",
+      "name": "Hai già avuto almeno un cliente che ti ha prenotato direttamente?",
+      "acceptedAnswer": {"@type": "Answer", "text": "I clienti diretti sono un segnale di passaggio da scuola-only a cordata."}
+    },
+    {
+      "@type": "Question",
+      "name": "I clienti diretti, da soli, basterebbero a coprire le tue spese?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Se sì, sei vicino al rango Vetta: indipendenza economica reale."}
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa vuoi ottenere nei prossimi 12 mesi?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Chiarezza, indipendenza completa o mentorship: il quiz orienta il prossimo passo."}
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Vai al contenuto</a>
@@ -16,8 +61,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html">
-      <span class="badge"><img src="assets/img/crest-black-600.png" alt="The Crest Guild"></span>
-      <span>THE CREST GUILD</span>
+      <span class="badge"><img src="assets/img/crest-mark.png" alt="The Crest Guild"></span>
+      <img class="brand-wordmark" src="assets/img/logo-wordmark-plain.png" alt="The Crest Guild">
     </a>
     <nav class="navlinks" aria-label="Principale">
       <a href="index.html">Home</a>
@@ -55,6 +100,46 @@
 
 <section class="tight">
   <div class="wrap quiz-shell">
+
+    <div id="quizStaticContent" class="quiz-static">
+      <article>
+        <h3>Hai la P.IVA attiva?</h3>
+        <ul>
+          <li>No, non ancora</li>
+          <li>Sì, è attiva</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Hai un sistema di prenotazione tuo, separato da quello della scuola?</h3>
+        <ul>
+          <li>No, uso solo quello della scuola</li>
+          <li>Sì, ne ho uno mio (anche solo WhatsApp/calendario personale)</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Hai già avuto almeno un cliente che ti ha prenotato direttamente?</h3>
+        <ul>
+          <li>No, mai</li>
+          <li>Sì, qualche volta</li>
+        </ul>
+      </article>
+      <article>
+        <h3>I clienti diretti, da soli, basterebbero a coprire le tue spese?</h3>
+        <ul>
+          <li>No, per niente</li>
+          <li>Sì, o quasi</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Cosa vuoi ottenere nei prossimi 12 mesi?</h3>
+        <ul>
+          <li>Capire chiaramente da dove partire</li>
+          <li>Uscire completamente dal modello scuola</li>
+          <li>Diventare mentore per altri maestri</li>
+        </ul>
+      </article>
+    </div>
+
     <div class="quiz-progress" id="quizProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Avanzamento quiz"><i id="quizProgress"></i></div>
     <div id="quizBody" aria-live="polite"></div>
   </div>
@@ -66,8 +151,8 @@
     <div class="eco-strip-label"><b>The Crest Guild</b> è un prodotto della famiglia ArmoFlow</div>
     <div class="eco-strip-links">
       <a href="https://armoflow.com" target="_blank" rel="noopener noreferrer">ArmoFlow</a>
-      <a href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
-      <a href="https://vaelmont.co.uk" target="_blank" rel="noopener noreferrer">Vaelmont</a>
+      <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
+      <a data-track="outbound_click" href="https://vaelmont.co.uk" target="_blank" rel="noopener noreferrer">Vaelmont</a>
     </div>
   </div>
 </div>
@@ -76,7 +161,10 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <h5>The Crest Guild</h5>
+        <div class="foot-brand">
+          <img src="assets/img/crest-mark.png" alt="">
+          <h5>The Crest Guild</h5>
+        </div>
         <p style="max-width:280px;">Il percorso per maestri di sci che vogliono passare
           dalla scuola all'indipendenza, un rango alla volta.</p>
       </div>
@@ -88,7 +176,7 @@
       <div>
         <h5>Ecosystem ArmoFlow</h5>
         <a href="ecosystem.html">Come sono collegati i prodotti</a>
-        <a href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
+        <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
         <h5>Contatti</h5>

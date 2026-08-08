@@ -1,5 +1,8 @@
 /* The Crest Guild — rank trail UI */
 (function(){
+  var staticEl = document.getElementById('rankStaticContent');
+  if (staticEl) staticEl.style.display = 'none';
+
   var RANKS = [
     {
       id: 0, tag: "Punto di partenza", label: "In Scuola", state: "done",
