@@ -7,8 +7,11 @@
 <meta name="description" content="Dalla scuola sci all'indipendenza: i cinque ranghi della Gilda, con criteri verificabili per ogni tappa.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/style-guild.css">
+<script src="assets/config.js"></script>
+<script src="assets/analytics.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Vai al contenuto</a>
 
 <header>
   <div class="wrap nav">
@@ -16,7 +19,7 @@
       <span class="badge"><img src="assets/img/crest-black-600.png" alt="The Crest Guild"></span>
       <span>THE CREST GUILD</span>
     </a>
-    <nav class="navlinks">
+    <nav class="navlinks" aria-label="Principale">
       <a href="index.html">Home</a>
       <a href="pathways.html" aria-current="page">I Ranghi</a>
       <a href="quiz.html">Quiz</a>
@@ -24,8 +27,8 @@
       <a href="ecosystem.html">Ecosystem</a>
     </nav>
     <div class="nav-right">
-      <a class="nav-cta" href="#candidati">Candidati</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">
+      <a class="nav-cta" href="#candidati" data-track="cta_click">Candidati</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
     </div>
@@ -40,6 +43,7 @@
   <a class="mn-cta" href="#candidati">Candidati</a>
 </div>
 
+<main id="main">
 <section class="hero" style="padding-top:112px; padding-bottom:56px;">
   <div class="wrap">
     <span class="eyebrow">Per maestri di sci che vogliono lavorare in proprio</span>
@@ -54,7 +58,7 @@
     <div class="section-head reveal">
       <span class="eyebrow">Il percorso completo</span>
       <h2>Esplora ogni rango</h2>
-      <p>Clicca su una tappa per vedere cosa serve per raggiungerla e cosa cambia
+      <p>Seleziona una tappa per vedere cosa serve per raggiungerla e cosa cambia
         concretamente nel tuo modo di lavorare.</p>
     </div>
 
@@ -64,7 +68,7 @@
         <div class="trail-line-fg" id="trailFg"></div>
         <div class="trail-nodes" id="trailNodes" role="tablist" aria-label="Ranghi della Gilda"></div>
       </div>
-      <div class="trail-detail" id="trailDetail"></div>
+      <div class="trail-detail" id="trailDetail" role="tabpanel" tabindex="0"></div>
     </div>
   </div>
 </section>
@@ -115,23 +119,123 @@
   </div>
 </section>
 
-<section class="cta-band reveal" id="candidati">
+<section>
   <div class="wrap">
-    <span class="eyebrow" style="justify-content:center;">Non sei sicuro?</span>
-    <h2>Ti aiutiamo a capire da che rango parti</h2>
-    <p>Raccontaci a che punto sei oggi — quanto dipendi dalla scuola, che asset hai
-      già — e ti indichiamo il punto di partenza giusto.</p>
-    <a class="btn btn-primary" href="mailto:hello@thecrestguild.example">Candidati alla Gilda</a>
+    <div class="section-head reveal">
+      <span class="eyebrow">Le vie della Gilda</span>
+      <h2>Tre modi per entrare, a seconda di dove sei</h2>
+      <p>Scegli il punto d'ingresso più onesto rispetto alla tua situazione attuale —
+        non il più ambizioso.</p>
+    </div>
+    <div class="service-grid stagger">
+      <article class="service-card reveal" id="revisione">
+        <span class="tag">Diagnosi</span>
+        <h3>Revisione Indipendente</h3>
+        <p>Per chi vuole capire, prima di investire tempo o budget, dove il
+          proprio profilo e i propri processi perdono valore.</p>
+        <ul>
+          <li>Punti di forza reali</li>
+          <li>Lacune commerciali</li>
+          <li>3 priorità pratiche</li>
+          <li>Prossimo passo consigliato</li>
+        </ul>
+        <a class="card-cta" href="#candidati" data-track="cta_click" data-intent="revisione">Richiedi una revisione</a>
+      </article>
+      <article class="service-card reveal" id="affiancamento">
+        <span class="tag">Attuazione</span>
+        <h3>Affiancamento Operativo</h3>
+        <p>Per chi ha già chiaro cosa serve e vuole aiuto concreto per
+          trasformarlo in sistemi, messaggi e processi funzionanti.</p>
+        <ul>
+          <li>Setup del profilo/offerta</li>
+          <li>Messaggi e materiali cliente</li>
+          <li>Percorso di acquisizione</li>
+          <li>Follow-up strutturato</li>
+        </ul>
+        <a class="card-cta" href="#candidati" data-track="cta_click" data-intent="affiancamento">Richiedi affiancamento</a>
+      </article>
+      <article class="service-card reveal" id="maestria">
+        <span class="tag">Sviluppo</span>
+        <h3>Percorso di Maestria</h3>
+        <p>Per chi vuole più struttura, direzione professionale e
+          autonomia nel lungo periodo, non solo una soluzione tattica.</p>
+        <ul>
+          <li>Fiducia professionale</li>
+          <li>Direzione di carriera</li>
+          <li>Preparazione strategica</li>
+          <li>Verso il lavoro indipendente</li>
+        </ul>
+        <a class="card-cta" href="#candidati" data-track="cta_click" data-intent="maestria">Candidati al percorso</a>
+      </article>
+    </div>
   </div>
 </section>
+
+<section class="cta-band cta-band-form reveal" id="candidati">
+  <div class="wrap">
+    <div class="cta-intro">
+      <span class="eyebrow" style="justify-content:center;">Candidatura</span>
+      <h2>Entra in Gilda su candidatura</h2>
+      <p>Non vendiamo posti a listino pubblico. Valutiamo dove sei oggi e ti
+        indichiamo il rango e la via d'ingresso più onesti.</p>
+    </div>
+
+    <div class="criteria-box reveal">
+      <h3>Criteri di candidatura</h3>
+      <ul>
+        <li>Sei maestro di sci (o in percorso) e vuoi clienti propri, non solo scuola.</li>
+        <li>Accetti un percorso a tappe verificabili, non una scorciatoia marketing.</li>
+        <li>Rispondiamo entro 48 ore lavorative con il prossimo passo concreto.</li>
+      </ul>
+    </div>
+
+    <form class="crest-form" id="candidaturaForm" novalidate>
+      <input type="hidden" name="_subject" value="Candidatura The Crest Guild">
+      <input type="hidden" name="rank" id="rankField" value="">
+      <input type="hidden" name="intent" id="intentField" value="">
+      <div class="hp-field" aria-hidden="true">
+        <label for="gotchaCandidatura">Non compilare</label>
+        <input type="text" name="_gotcha" id="gotchaCandidatura" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="candName">Nome</label>
+        <input id="candName" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="candEmail">Email</label>
+        <input id="candEmail" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="candSituazione">Situazione attuale</label>
+        <select id="candSituazione" name="situazione" required>
+          <option value="">Seleziona…</option>
+          <option value="In Scuola">In Scuola</option>
+          <option value="Base Camp">Base Camp</option>
+          <option value="Fondamenta">Fondamenta</option>
+          <option value="Cordata">Cordata</option>
+          <option value="Vetta">Vetta</option>
+          <option value="Non so">Non so ancora</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="candMessage">Messaggio <span class="hint">(opzionale)</span></label>
+        <textarea id="candMessage" name="message" rows="4" placeholder="Quanto dipendi dalla scuola, che asset hai già…"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" data-track="cta_click">Invia candidatura</button>
+      <div class="form-status" id="candidaturaStatus" hidden aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
 
 <div class="eco-strip">
   <div class="wrap">
     <div class="eco-strip-label"><b>The Crest Guild</b> è un prodotto della famiglia ArmoFlow</div>
     <div class="eco-strip-links">
-      <a href="https://armoflow.com" target="_blank" rel="noopener">ArmoFlow</a>
-      <a href="https://frostdesk.ai" target="_blank" rel="noopener">FrostDesk</a>
-      <a href="https://vaelmont.co.uk" target="_blank" rel="noopener">Vaelmont</a>
+      <a href="https://armoflow.com" target="_blank" rel="noopener noreferrer">ArmoFlow</a>
+      <a href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
+      <a href="https://vaelmont.co.uk" target="_blank" rel="noopener noreferrer">Vaelmont</a>
     </div>
   </div>
 </div>
@@ -153,11 +257,11 @@
       <div>
         <h5>Ecosystem ArmoFlow</h5>
         <a href="ecosystem.html">Come sono collegati i prodotti</a>
-        <a href="https://frostdesk.ai" target="_blank" rel="noopener">FrostDesk →</a>
+        <a href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
         <h5>Contatti</h5>
-        <a href="mailto:hello@thecrestguild.example">hello@thecrestguild.example</a>
+        <a id="footerContact" href="#candidati">Candidati via form</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -167,87 +271,16 @@
   </div>
 </footer>
 
-<script>
-(function(){
-  var RANKS = [
-    {
-      id: 0, tag: "Punto di partenza", label: "In Scuola", state: "done",
-      title: "In Scuola", stateLabel: "Fuori dalla Gilda",
-      desc: "Lavori solo tramite la scuola sci: clienti, tariffe e calendario decisi da altri. È il punto da cui parte chiunque entri in Gilda.",
-      items: ["Nessun cliente proprio", "Tariffa fissata dalla scuola", "Calendario deciso da altri", "Zero rischio, zero indipendenza"]
-    },
-    {
-      id: 1, tag: "Rango I", label: "Base Camp", state: "done",
-      title: "Base Camp", stateLabel: "Completato",
-      desc: "Ammissione in Gilda. Prima diagnosi onesta: quanto dipendi oggi dalla scuola, che asset hai già, dove puoi davvero iniziare a scalare.",
-      items: ["Colloquio d'ingresso in Gilda", "Valutazione asset attuali", "Piano di risalita personalizzato", "Accesso alla community dei maestri"]
-    },
-    {
-      id: 2, tag: "Rango II", label: "Fondamenta", state: "current",
-      title: "Fondamenta", stateLabel: "In corso",
-      desc: "Costruisci l'infrastruttura che serve per poter dire sì a un cliente diretto: senza questo, l'indipendenza resta solo un'idea.",
-      items: ["P.IVA attiva", "Assicurazione professionale", "Sistema di prenotazione tuo", "Listino prezzi personale"]
-    },
-    {
-      id: 3, tag: "Rango III", label: "Cordata", state: "locked",
-      title: "Cordata", stateLabel: "Da raggiungere",
-      desc: "Legati sulla stessa corda, ma ognuno con la propria linea: lavori ancora con la scuola, ma inizi a prendere clienti diretti in parallelo.",
-      items: ["Primi clienti diretti", "Reputazione propria (recensioni, passaparola)", "Gestione doppio canale", "Primi confronti di prezzo reali"]
-    },
-    {
-      id: 4, tag: "Rango IV", label: "Vetta", state: "locked",
-      title: "Vetta", stateLabel: "Rango finale",
-      desc: "Indipendenza reale: il flusso di clienti diretti basta a reggere l'attività. Da qui puoi anche rientrare in Gilda come mentore.",
-      items: ["Flusso diretto sufficiente", "Validazione di un mentore della Gilda", "Possibilità di diventare mentore", "Nome e reputazione indipendenti dalla scuola"]
-    }
-  ];
-
-  var nodesEl = document.getElementById('trailNodes');
-  var detailEl = document.getElementById('trailDetail');
-  var fgEl = document.getElementById('trailFg');
-
-  var shieldSvg = '<svg viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">' +
-    '<path class="seal-shield" d="M10 1L18 4.2V10.5C18 15.5 14.7 19.7 10 21.5C5.3 19.7 2 15.5 2 10.5V4.2L10 1Z" stroke-width="1.3"/>' +
-    '<path class="seal-mark" d="M10 5.5V16.5M6.5 9H13.5" stroke-width="1.1"/>' +
-    '</svg>';
-
-  function render(activeId){
-    nodesEl.innerHTML = '';
-    RANKS.forEach(function(r){
-      var btn = document.createElement('button');
-      btn.className = 'trail-node is-' + r.state;
-      btn.setAttribute('role','tab');
-      btn.setAttribute('aria-selected', String(r.id === activeId));
-      btn.innerHTML =
-        '<span class="trail-seal">' + shieldSvg + '</span>' +
-        '<span class="label">' + r.label + '</span>' +
-        '<span class="rank-tag">' + r.tag + '</span>';
-      btn.addEventListener('click', function(){ showDetail(r.id); });
-      nodesEl.appendChild(btn);
-    });
-
-    var doneCount = RANKS.filter(function(r){ return r.state === 'done'; }).length;
-    var pct = (doneCount / (RANKS.length - 1)) * 100;
-    requestAnimationFrame(function(){ fgEl.style.width = pct + '%'; });
-  }
-
-  function showDetail(id){
-    var r = RANKS.find(function(x){ return x.id === id; });
-    var stateClass = 'state-active';
-    detailEl.innerHTML =
-      '<div class="trail-detail-head">' +
-        '<div><span class="eyebrow">' + r.tag + '</span><h3>' + r.title + '</h3></div>' +
-        '<span class="state ' + stateClass + '">' + r.stateLabel + '</span>' +
-      '</div>' +
-      '<p class="desc">' + r.desc + '</p>' +
-      '<ul>' + r.items.map(function(i){ return '<li>' + i + '</li>'; }).join('') + '</ul>';
-    render(id);
-  }
-
-  showDetail(2);
-})();
-</script>
-
+<script src="assets/trail.js"></script>
+<script src="assets/forms.js"></script>
 <script src="assets/site.js"></script>
+<script>
+document.querySelectorAll('[data-intent]').forEach(function(a){
+  a.addEventListener('click', function(){
+    var field = document.getElementById('intentField');
+    if (field) field.value = a.getAttribute('data-intent') || '';
+  });
+});
+</script>
 </body>
 </html>

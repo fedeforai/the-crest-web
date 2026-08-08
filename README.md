@@ -1,52 +1,57 @@
-# The Crest Guild — sito web (v0)
+# The Crest Guild — sito web
 
-Prima bozza statica (HTML/CSS puro, nessuna build), pensata come punto di
-partenza per il repo `the-crest-web`, che al momento è vuoto.
+Sito statico (HTML/CSS/JS) per The Crest Guild. Host tipico: GitHub Pages
+(`fedeforai.github.io/the-crest-web`).
 
-## Cosa c'è
+## Pagine live
 
 - `index.html` — homepage
-- `pathways.html` — pagina "I Ranghi" (equivalente della pagina `/pathways`
-  di Season One usata come riferimento: stessa logica di progressione a
-  tappe e di card di servizio, contenuti e identità visiva propri)
-- `assets/style.css` — tutto lo stile, con design tokens in `:root`
-  (colori, font, spaziature) facili da modificare in un punto solo
+- `pathways.html` — ranghi, servizi (`#revisione` `#affiancamento` `#maestria`), form candidatura
+- `quiz.html` — quiz di posizionamento + gate email
+- `about.html` — mission / vision / founder
+- `ecosystem.html` — famiglia ArmoFlow
 
-## Identità visiva scelta
+I file `*-preview.html` hanno `noindex` e non sono destinati alla navigazione pubblica.
 
-- **Colori**: ink navy `#0B1220`, oro antico `#C7A24B`, pergamena `#F1EBDA`,
-  verde foresta `#2F4538`, cremisi `#8B2E2E` (accento raro)
-- **Font**: Fraunces (titoli, serif con carattere), Work Sans (testo),
-  IBM Plex Mono (etichette/eyebrow, in stile "sigillo")
-- **Motivo ricorrente**: uno scudo/crest disegnato in SVG, usato nell'header
-  e come filigrana nell'hero — nessuna risorsa esterna o IP di terzi
+## Setup lead + analytics
 
-Tutti i contenuti (nomi dei ranghi, testi, quote) sono **placeholder** da
-sostituire con i contenuti reali della Gilda: settore preciso, tono di voce,
-nomi effettivi dei servizi, email/contatti reali.
+Config pubblica in [`assets/config.js`](assets/config.js) (nessun secret):
 
-## Come portarlo nel repo GitHub
+1. **Formspree** (progetto THE CREST) — collegato
+   - Candidatura: `mbgrdkbz` → Pathways
+   - Quiz lead: `mjybgozj` → Quiz gate email
+   - Restrict to Domain: `fedeforai.github.io`
+   - **Non** commitare il Deploy Key Formspree
+2. **GA4**
+   - Incolla il Measurement ID in `GA4_MEASUREMENT_ID` (sostituisci `G-XXXXXXXX`)
+   - Eventi: `quiz_start`, `quiz_complete`, `cta_click`, `lead_submit`
+3. **Email footer**
+   - `CONTACT_EMAIL`: già impostata a `fed@armoflow.com`
 
-Il repo `fedeforai/the-crest-web` risulta vuoto, quindi puoi fare push diretto:
+Guida dettagliata passo-passo: [`docs/SETUP-FORMSPREE-GA4.md`](docs/SETUP-FORMSPREE-GA4.md)
 
-```bash
-git clone https://github.com/fedeforai/the-crest-web.git
-cp -r /percorso/di/questi/file/* the-crest-web/
-cd the-crest-web
-git add .
-git commit -m "Prima bozza sito The Crest Guild"
-git push origin main
-```
+Finché `GA4_MEASUREMENT_ID` resta `G-XXXXXXXX`, analytics resta disattivato.
 
-## Deploy veloce (facoltativo)
+## Script condivisi
 
-Essendo HTML statico puro, si pubblica su Vercel/Netlify/GitHub Pages senza
-alcun build step: basta puntare la root del repo.
+- `assets/config.js` — ID pubblici
+- `assets/analytics.js` — GA4 + `window.crestTrack`
+- `assets/forms.js` — Formspree candidatura + footer contact
+- `assets/quiz.js` — quiz + lead gate
+- `assets/trail.js` — UI ranghi
+- `assets/site.js` — reveal, mobile nav, external links
+- `assets/style-guild.css` — design system
 
-## Prossimi passi consigliati
+## Deploy
 
-1. Contenuti reali: cosa fa esattamente la Gilda, per chi, nomi definitivi
-   dei ranghi/servizi, prezzi se pubblici
-2. Pagina "Chi siamo" / founder
-3. Form di contatto funzionante (oggi i CTA puntano a `mailto:`)
-4. Eventuale passaggio a Next.js se serve CMS, blog o area riservata membri
+Hosting ufficiale: **Vercel** + dominio **thecrestguild.com** (DNS su Squarespace).
+
+Guida: [`docs/SETUP-VERCEL-DOMAIN.md`](docs/SETUP-VERCEL-DOMAIN.md)
+
+GitHub Pages (`fedeforai.github.io/the-crest-web`) può restare come mirror o essere disabilitato.
+
+## Accessibilità (baseline Wave 0+1)
+
+Skip-link, `<main>`, landmark nav, focus-visible, contrasti testo alzati,
+label sui form, quiz con `radiogroup`/`progressbar`, link esterni con
+`noopener noreferrer` + annuncio nuova scheda.

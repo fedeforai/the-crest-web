@@ -7,8 +7,12 @@
 <meta name="description" content="The Crest Guild è uno dei tre prodotti di ArmoFlow Ltd, insieme a FrostDesk e Vaelmont: come sono collegati e a chi servono.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/style-guild.css">
+<script src="assets/config.js"></script>
+<script src="assets/analytics.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
 
 <header>
   <div class="wrap nav">
@@ -16,7 +20,7 @@
       <span class="badge"><img src="assets/img/crest-black-600.png" alt="The Crest Guild"></span>
       <span>THE CREST GUILD</span>
     </a>
-    <nav class="navlinks">
+    <nav class="navlinks" aria-label="Principale">
       <a href="index.html">Home</a>
       <a href="pathways.html">I Ranghi</a>
       <a href="quiz.html">Quiz</a>
@@ -24,7 +28,7 @@
       <a href="ecosystem.html" aria-current="page">Ecosystem</a>
     </nav>
     <div class="nav-right">
-      <a class="nav-cta" href="pathways.html">Entra nella Gilda</a>
+      <a class="nav-cta" href="pathways.html#candidati" data-track="cta_click">Entra nella Gilda</a>
       <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -37,9 +41,10 @@
   <a href="quiz.html">Quiz</a>
   <a href="about.html">Chi Siamo</a>
   <a href="ecosystem.html" aria-current="page">Ecosystem</a>
-  <a class="mn-cta" href="pathways.html">Entra nella Gilda</a>
+  <a class="mn-cta" href="pathways.html#candidati" data-track="cta_click">Entra nella Gilda</a>
 </div>
 
+<main id="main">
 <section class="hero" style="padding-top:112px; padding-bottom:56px;">
   <div class="wrap">
     <span class="eyebrow">Fa parte di qualcosa di più grande</span>
@@ -68,7 +73,7 @@
         <p class="desc">AI booking per maestri di sci. Unisce WhatsApp e Gmail in
           un'unica inbox, suggerisce risposte con l'AI e gestisce automaticamente
           le prenotazioni a partire dalle conversazioni.</p>
-        <a class="eco-link" href="https://frostdesk.ai" target="_blank" rel="noopener">Vai a FrostDesk</a>
+        <a class="eco-link" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">Vai a FrostDesk</a>
       </div>
 
       <div class="eco-card is-self reveal">
@@ -89,7 +94,7 @@
         <p class="desc">Il tuo cliente, organizzato. La sua vacanza, curata. Gestione
           concierge: raccoglie esperienze, pagamenti e recensioni per ogni
           cliente in un unico posto.</p>
-        <a class="eco-link" href="https://vaelmont.co.uk" target="_blank" rel="noopener">Vai a Vaelmont</a>
+        <a class="eco-link" href="https://vaelmont.co.uk" target="_blank" rel="noopener noreferrer">Vai a Vaelmont</a>
       </div>
     </div>
 
@@ -152,9 +157,21 @@
     <span class="eyebrow" style="justify-content:center;">Inizia da qui</span>
     <h2>Il percorso comincia in Gilda</h2>
     <p>Prima la struttura, poi lo strumento. È in quest'ordine che funziona meglio.</p>
-    <a class="btn btn-primary" href="pathways.html">Scopri i Ranghi</a>
+    <a class="btn btn-primary" href="pathways.html" data-track="cta_click">Scopri i Ranghi</a>
   </div>
 </section>
+</main>
+
+<div class="eco-strip">
+  <div class="wrap">
+    <div class="eco-strip-label"><b>The Crest Guild</b> è un prodotto della famiglia ArmoFlow</div>
+    <div class="eco-strip-links">
+      <a href="https://armoflow.com" target="_blank" rel="noopener noreferrer">ArmoFlow</a>
+      <a href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
+      <a href="https://vaelmont.co.uk" target="_blank" rel="noopener noreferrer">Vaelmont</a>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="wrap">
@@ -172,13 +189,13 @@
       </div>
       <div>
         <h5>Ecosystem ArmoFlow</h5>
-        <a href="https://armoflow.com" target="_blank" rel="noopener">ArmoFlow →</a>
-        <a href="https://frostdesk.ai" target="_blank" rel="noopener">FrostDesk →</a>
-        <a href="https://vaelmont.co.uk" target="_blank" rel="noopener">Vaelmont →</a>
+        <a href="https://armoflow.com" target="_blank" rel="noopener noreferrer">ArmoFlow →</a>
+        <a href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk →</a>
+        <a href="https://vaelmont.co.uk" target="_blank" rel="noopener noreferrer">Vaelmont →</a>
       </div>
       <div>
         <h5>Contatti</h5>
-        <a href="mailto:hello@thecrestguild.example">hello@thecrestguild.example</a>
+        <a href="pathways.html#candidati" id="footerContact">Candidati via form</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -188,6 +205,7 @@
   </div>
 </footer>
 
+<script src="assets/forms.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>

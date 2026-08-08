@@ -27,15 +27,21 @@
   var panel = document.getElementById('mobileNav');
   if (!toggle || !panel) return;
 
+  var lastFocus = null;
+
   function close(){
     panel.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('intro-lock');
+    if (lastFocus) lastFocus.focus();
   }
   function open(){
+    lastFocus = document.activeElement;
     panel.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');
     document.body.classList.add('intro-lock');
+    var first = panel.querySelector('a');
+    if (first) first.focus();
   }
 
   toggle.addEventListener('click', function(){
@@ -46,6 +52,22 @@
     a.addEventListener('click', close);
   });
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') close();
+    if (e.key === 'Escape' && panel.classList.contains('is-open')) close();
+  });
+})();
+
+// Mark external links for assistive tech when missing.
+(function(){
+  document.querySelectorAll('a[target="_blank"]').forEach(function(a){
+    var rel = (a.getAttribute('rel') || '').toLowerCase();
+    if (rel.indexOf('noopener') === -1 || rel.indexOf('noreferrer') === -1) {
+      a.setAttribute('rel', 'noopener noreferrer');
+    }
+    if (!a.querySelector('.visually-hidden')) {
+      var tip = document.createElement('span');
+      tip.className = 'visually-hidden';
+      tip.textContent = ' (si apre in una nuova scheda)';
+      a.appendChild(tip);
+    }
   });
 })();

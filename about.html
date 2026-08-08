@@ -4,11 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chi Siamo — The Crest Guild</title>
-<meta name="description" content="Mission, vision e valori di The Crest Guild: trasformare i maestri di sci da praticanti tecnici a imprenditori indipendenti.">
+<meta name="description" content="Mission, vision, founder e valori di The Crest Guild: trasformare i maestri di sci da praticanti tecnici a imprenditori indipendenti.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/style-guild.css">
+<script src="assets/config.js"></script>
+<script src="assets/analytics.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Vai al contenuto</a>
 
 <header>
   <div class="wrap nav">
@@ -16,7 +19,7 @@
       <span class="badge"><img src="assets/img/crest-black-600.png" alt="The Crest Guild"></span>
       <span>THE CREST GUILD</span>
     </a>
-    <nav class="navlinks">
+    <nav class="navlinks" aria-label="Principale">
       <a href="index.html">Home</a>
       <a href="pathways.html">I Ranghi</a>
       <a href="quiz.html">Quiz</a>
@@ -24,8 +27,8 @@
       <a href="ecosystem.html">Ecosystem</a>
     </nav>
     <div class="nav-right">
-      <a class="nav-cta" href="pathways.html">Entra nella Gilda</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">
+      <a class="nav-cta" href="pathways.html#candidati" data-track="cta_click">Entra nella Gilda</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
     </div>
@@ -37,9 +40,10 @@
   <a href="quiz.html">Quiz</a>
   <a href="about.html" aria-current="page">Chi Siamo</a>
   <a href="ecosystem.html">Ecosystem</a>
-  <a class="mn-cta" href="pathways.html">Entra nella Gilda</a>
+  <a class="mn-cta" href="pathways.html#candidati">Entra nella Gilda</a>
 </div>
 
+<main id="main">
 <section class="hero" style="padding-top:112px; padding-bottom:56px;">
   <div class="wrap">
     <span class="eyebrow">Chi siamo</span>
@@ -103,6 +107,42 @@
   </div>
 </div>
 
+<section id="founder">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Fondatori</span>
+      <h2>Chi guida la Gilda</h2>
+      <p>Persone con un piede nella montagna e uno nei sistemi operativi —
+        non un team di marketing generico.</p>
+    </div>
+    <div class="founder-grid reveal">
+      <article class="founder-card">
+        <div class="founder-avatar" aria-hidden="true">FN</div>
+        <div>
+          <h3>Federico Novello</h3>
+          <p class="founder-role">Founder · ArmoFlow / The Crest Guild</p>
+          <p>Costruisce prodotti operativi per professionisti outdoor
+            (FrostDesk, Vaelmont, Crest Guild). Porta nella Gilda la disciplina
+            di prodotto: checklist, stati chiari, niente teatro.</p>
+          <p><em>Bio e foto definitive da confermare.</em></p>
+          <a class="text-link" href="https://github.com/fedeforai" target="_blank" rel="noopener noreferrer">Profilo GitHub</a>
+        </div>
+      </article>
+      <article class="founder-card">
+        <div class="founder-avatar" aria-hidden="true">CG</div>
+        <div>
+          <h3>Mentor della cordata</h3>
+          <p class="founder-role">Mentorship · Operazioni in pista</p>
+          <p>Slot riservato al mentore operativo con credibilità sci:
+            esperienza scuola + clienti diretti. Nome, foto e bio saranno
+            pubblicati al closing della prima cohort.</p>
+          <p><em>Placeholder — sostituire con founder/mentor reale.</em></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head reveal">
@@ -114,31 +154,31 @@
 
     <div class="value-cards stagger">
       <div class="value-card reveal">
-        <span class="vc-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16M4 6h16M4 18h10" stroke-linecap="round"/></svg></span>
+        <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16M4 6h16M4 18h10" stroke-linecap="round"/></svg></span>
         <h4>Chiarezza</h4>
         <p>Sistemi semplici che fanno cose complesse. Riduciamo il rumore,
           non lo aggiungiamo.</p>
       </div>
       <div class="value-card reveal">
-        <span class="vc-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L20 6.5V12C20 16.5 16.5 20 12 21C7.5 20 4 16.5 4 12V6.5L12 3Z" stroke-linejoin="round"/></svg></span>
+        <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L20 6.5V12C20 16.5 16.5 20 12 21C7.5 20 4 16.5 4 12V6.5L12 3Z" stroke-linejoin="round"/></svg></span>
         <h4>Affidabilità</h4>
         <p>Funziona quando conta. Promesse mantenute, nessuna sorpresa sulle
           scadenze.</p>
       </div>
       <div class="value-card reveal">
-        <span class="vc-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <h4>Elevazione</h4>
         <p>Far parte della Gilda ti fa apparire più professionale. Il
           percorso eleva, non sostituisce.</p>
       </div>
       <div class="value-card reveal">
-        <span class="vc-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
+        <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
         <h4>Autonomia</h4>
         <p>Non dipendi da noi per ogni piccola cosa. Funziona anche senza
           supervisione.</p>
       </div>
       <div class="value-card reveal">
-        <span class="vc-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke-linejoin="round"/></svg></span>
+        <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke-linejoin="round"/></svg></span>
         <h4>Precisione</h4>
         <p>Niente è lasciato al caso — dai criteri di rango ai contenuti di
           ogni tappa.</p>
@@ -151,18 +191,19 @@
   <div class="wrap">
     <span class="eyebrow" style="justify-content:center;">Il prossimo passo</span>
     <h2>Vuoi vedere da che rango parti?</h2>
-    <p>Due minuti di quiz, nessuna registrazione.</p>
-    <a class="btn btn-primary" href="quiz.html">Fai il quiz di posizionamento</a>
+    <p>Due minuti di quiz; l’email serve solo per consegnarti il risultato.</p>
+    <a class="btn btn-primary" href="quiz.html" data-track="cta_click">Fai il quiz di posizionamento</a>
   </div>
 </section>
+</main>
 
 <div class="eco-strip">
   <div class="wrap">
     <div class="eco-strip-label"><b>The Crest Guild</b> è un prodotto della famiglia ArmoFlow</div>
     <div class="eco-strip-links">
-      <a href="https://armoflow.com" target="_blank" rel="noopener">ArmoFlow</a>
-      <a href="https://frostdesk.ai" target="_blank" rel="noopener">FrostDesk</a>
-      <a href="https://vaelmont.co.uk" target="_blank" rel="noopener">Vaelmont</a>
+      <a href="https://armoflow.com" target="_blank" rel="noopener noreferrer">ArmoFlow</a>
+      <a href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
+      <a href="https://vaelmont.co.uk" target="_blank" rel="noopener noreferrer">Vaelmont</a>
     </div>
   </div>
 </div>
@@ -184,11 +225,11 @@
       <div>
         <h5>Ecosystem ArmoFlow</h5>
         <a href="ecosystem.html">Come sono collegati i prodotti</a>
-        <a href="https://frostdesk.ai" target="_blank" rel="noopener">FrostDesk →</a>
+        <a href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
         <h5>Contatti</h5>
-        <a href="mailto:hello@thecrestguild.example">hello@thecrestguild.example</a>
+        <a id="footerContact" href="pathways.html#candidati">Candidati via form</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -198,6 +239,7 @@
   </div>
 </footer>
 
+<script src="assets/forms.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>
