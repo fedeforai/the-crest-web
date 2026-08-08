@@ -1088,3 +1088,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .btn-hero-secondary{ opacity:0.92; }
 .btn-hero-primary{ font-weight:700; }
+
+.legal{
+  max-width:720px;
+  padding-bottom:40px;
+}
+.legal h2{
+  font-size:20px;
+  margin:36px 0 12px;
+  color:var(--ivory);
+}
+.legal h2:first-child{ margin-top:0; }
+.legal p, .legal li{
+  color:var(--text-dim);
+  font-size:15px;
+  line-height:1.65;
+  margin:0 0 12px;
+}
+.legal ul{ margin:0 0 16px; padding-left:1.2em; }
+.legal li{ margin-bottom:8px; }
+.legal strong{ color:var(--ivory); font-weight:600; }

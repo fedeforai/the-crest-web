@@ -99,8 +99,8 @@
     ));
     var priv = document.createElement('a');
     priv.className = 'text-link';
-    priv.href = '#';
-    priv.textContent = '[DA CONFERMARE: URL privacy]';
+    priv.href = 'privacy.html';
+    priv.textContent = 'Privacy policy';
     body.appendChild(priv);
 
     var actions = document.createElement('div');
