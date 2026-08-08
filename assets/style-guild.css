@@ -92,13 +92,17 @@ h3,h4{
   padding:5px 10px 5px 8px;
   border:0.5px solid var(--border);
   border-radius:var(--radius-md);
+  /* High-contrast label text — state hue only on the indicator dot (WCAG 1.4.1 / 1.4.3) */
+  color:var(--text-on-onyx);
 }
-.state::before{ content:''; width:6px; height:6px; border-radius:50%; }
-.state-expired{ color:var(--state-expired); }
+.state::before{
+  content:'';
+  width:6px; height:6px; border-radius:50%;
+  flex:none;
+  background:var(--neutral-500);
+}
 .state-expired::before{ background:var(--state-expired); }
-.state-pending{ color:var(--state-pending); }
 .state-pending::before{ background:var(--state-pending); }
-.state-active{ color:var(--state-active); }
 .state-active::before{ background:var(--state-active); }
 
 /* ---------- entrance animations ---------- */
@@ -962,10 +966,20 @@ section.tight{ padding:72px 0; }
 .form-status{
   font-size:14px; padding:12px 14px;
   border:0.5px solid var(--border);
+  color:var(--text-on-onyx);
 }
-.form-status.is-pending{ color:var(--state-pending); }
-.form-status.is-success{ color:var(--state-active); border-color:var(--state-active); }
-.form-status.is-error{ color:var(--state-expired); border-color:var(--state-expired); }
+.form-status.is-pending{
+  color:var(--text-on-onyx);
+  border-color:var(--state-pending);
+}
+.form-status.is-success{
+  color:var(--text-on-onyx);
+  border-color:var(--state-active);
+}
+.form-status.is-error{
+  color:var(--text-on-onyx);
+  border-color:var(--state-expired);
+}
 .criteria-box{
   max-width:640px; margin:0 auto 40px;
   border:0.5px solid var(--border);

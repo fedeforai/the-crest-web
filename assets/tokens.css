@@ -30,6 +30,8 @@
   /* Text on surfaces */
   --text-on-onyx: #EDEAE1;
   --text-on-parchment: #161512;
+  /* Gold darkened for text/icons on parchment (passes WCAG AA ≥4.5:1) — never use --color-gold as text on light */
+  --color-gold-on-parchment: #6B5228;
 
   /* Typography */
   --font-display: "Cormorant Garamond", "Times New Roman", Times, serif;
