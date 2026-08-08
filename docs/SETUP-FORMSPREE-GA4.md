@@ -96,7 +96,7 @@ Apri [`assets/config.js`](../assets/config.js) e sostituisci i placeholder:
 window.CREST_CONFIG = {
   FORMSPREE_CANDIDATURA: 'INCOLLA_QUI_ID_CANDIDATURA',  // era REPLACE_CANDIDATURA
   FORMSPREE_QUIZ_LEAD: 'INCOLLA_QUI_ID_QUIZ_LEAD',      // era REPLACE_QUIZ_LEAD
-  GA4_MEASUREMENT_ID: 'G-XXXXXXXX',
+  GA4_MEASUREMENT_ID: 'G-5M9YNQHV9T',
   CONTACT_EMAIL: 'fed@armoflow.com'
 };
 ```
@@ -133,14 +133,14 @@ window.CREST_CONFIG = {
 5. Crea anche un **Data stream** → **Web**
 6. URL sito: `https://fedeforai.github.io/the-crest-web`
 7. Nome stream: `Crest Guild Pages`
-8. Copia il **Measurement ID** (`G-XXXXXXXXXX`)
+8. Copia il **Measurement ID** (`G-5M9YNQHV9T` in produzione)
 
 ### B. Collega al sito
 
 In `assets/config.js`:
 
 ```js
-GA4_MEASUREMENT_ID: 'G-XXXXXXXXXX',  // il tuo ID reale
+GA4_MEASUREMENT_ID: 'G-5M9YNQHV9T',
 ```
 
 Salva, commit, push. Il file `assets/analytics.js` carica gtag solo se l’ID **non** contiene `XXXXXXXX`.
