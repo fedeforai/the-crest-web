@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Ranghi — The Crest Guild</title>
+<meta name="description" content="Dalla scuola sci all'indipendenza: i cinque ranghi della Gilda, con criteri verificabili per ogni tappa.">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/style-guild.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="badge"><img src="assets/img/crest-black-600.png" alt="The Crest Guild"></span>
+      <span>THE CREST GUILD</span>
+    </a>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="pathways.html" aria-current="page">I Ranghi</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="about.html">Chi Siamo</a>
+      <a href="ecosystem.html">Ecosystem</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="#candidati">Candidati</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="pathways.html" aria-current="page">I Ranghi</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="about.html">Chi Siamo</a>
+  <a href="ecosystem.html">Ecosystem</a>
+  <a class="mn-cta" href="#candidati">Candidati</a>
+</div>
+
+<section class="hero" style="padding-top:112px; padding-bottom:56px;">
+  <div class="wrap">
+    <span class="eyebrow">Per maestri di sci che vogliono lavorare in proprio</span>
+    <h1 style="font-size:clamp(32px,4.2vw,50px); margin-top:16px;">I Ranghi della Gilda</h1>
+    <p class="lede">Dalla scuola sci all'indipendenza: cinque tappe verificabili, non
+      una lista di corsi. Ogni rango certifica qualcosa di concreto che hai costruito.</p>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Il percorso completo</span>
+      <h2>Esplora ogni rango</h2>
+      <p>Clicca su una tappa per vedere cosa serve per raggiungerla e cosa cambia
+        concretamente nel tuo modo di lavorare.</p>
+    </div>
+
+    <div class="trail">
+      <div class="trail-track">
+        <div class="trail-line-bg"></div>
+        <div class="trail-line-fg" id="trailFg"></div>
+        <div class="trail-nodes" id="trailNodes" role="tablist" aria-label="Ranghi della Gilda"></div>
+      </div>
+      <div class="trail-detail" id="trailDetail"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<div class="big-statement">
+  <div class="wrap">
+    <p>Non è una gara di velocità. <span class="accent">È una gara di solidità</span> —
+      <span class="dim">ogni rango che salti torna a chiederti il conto più avanti.</span></p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Cosa fa salire di rango</span>
+      <h2>Criteri, non tempo passato in Gilda</h2>
+      <p>Per i primi ranghi bastano criteri oggettivi, verificabili da soli. Per l'ultimo
+        passo — diventare mentore — serve anche una validazione tra pari.</p>
+    </div>
+    <div class="giant-list reveal">
+      <div class="giant-row">
+        <span class="gi-num">01</span>
+        <div class="gi-body">
+          <h4>Ranghi I–III: checklist oggettiva</h4>
+          <p>P.IVA, assicurazione, sistema di prenotazione, primi clienti diretti:
+            cose che puoi verificare da solo, senza bisogno di un giudizio esterno.</p>
+        </div>
+      </div>
+      <div class="giant-row">
+        <span class="gi-num">02</span>
+        <div class="gi-body">
+          <h4>Rango IV: validazione tra pari</h4>
+          <p>Per il rango "Vetta" serve la conferma di un mentore della Gilda: il
+            rischio, a quel livello, è l'autoproclamazione.</p>
+        </div>
+      </div>
+      <div class="giant-row">
+        <span class="gi-num">03</span>
+        <div class="gi-body">
+          <h4>Dopo la Vetta: diventa mentore</h4>
+          <p>Chi raggiunge l'indipendenza reale può rientrare in Gilda come mentore
+            per chi sta salendo dietro di lui.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band reveal" id="candidati">
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center;">Non sei sicuro?</span>
+    <h2>Ti aiutiamo a capire da che rango parti</h2>
+    <p>Raccontaci a che punto sei oggi — quanto dipendi dalla scuola, che asset hai
+      già — e ti indichiamo il punto di partenza giusto.</p>
+    <a class="btn btn-primary" href="mailto:hello@thecrestguild.example">Candidati alla Gilda</a>
+  </div>
+</section>
+
+<div class="eco-strip">
+  <div class="wrap">
+    <div class="eco-strip-label"><b>The Crest Guild</b> è un prodotto della famiglia ArmoFlow</div>
+    <div class="eco-strip-links">
+      <a href="https://armoflow.com" target="_blank" rel="noopener">ArmoFlow</a>
+      <a href="https://frostdesk.ai" target="_blank" rel="noopener">FrostDesk</a>
+      <a href="https://vaelmont.co.uk" target="_blank" rel="noopener">Vaelmont</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>The Crest Guild</h5>
+        <p style="max-width:280px;">Il percorso per maestri di sci che vogliono passare
+          dalla scuola all'indipendenza, un rango alla volta.</p>
+      </div>
+      <div>
+        <h5>Percorso</h5>
+        <a href="pathways.html">I Ranghi</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">Chi Siamo</a>
+      </div>
+      <div>
+        <h5>Ecosystem ArmoFlow</h5>
+        <a href="ecosystem.html">Come sono collegati i prodotti</a>
+        <a href="https://frostdesk.ai" target="_blank" rel="noopener">FrostDesk →</a>
+      </div>
+      <div>
+        <h5>Contatti</h5>
+        <a href="mailto:hello@thecrestguild.example">hello@thecrestguild.example</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 The Crest Guild — ArmoFlow Ltd</span>
+      <span>Costruito per chi guida davvero il proprio mestiere.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var RANKS = [
+    {
+      id: 0, tag: "Punto di partenza", label: "In Scuola", state: "done",
+      title: "In Scuola", stateLabel: "Fuori dalla Gilda",
+      desc: "Lavori solo tramite la scuola sci: clienti, tariffe e calendario decisi da altri. È il punto da cui parte chiunque entri in Gilda.",
+      items: ["Nessun cliente proprio", "Tariffa fissata dalla scuola", "Calendario deciso da altri", "Zero rischio, zero indipendenza"]
+    },
+    {
+      id: 1, tag: "Rango I", label: "Base Camp", state: "done",
+      title: "Base Camp", stateLabel: "Completato",
+      desc: "Ammissione in Gilda. Prima diagnosi onesta: quanto dipendi oggi dalla scuola, che asset hai già, dove puoi davvero iniziare a scalare.",
+      items: ["Colloquio d'ingresso in Gilda", "Valutazione asset attuali", "Piano di risalita personalizzato", "Accesso alla community dei maestri"]
+    },
+    {
+      id: 2, tag: "Rango II", label: "Fondamenta", state: "current",
+      title: "Fondamenta", stateLabel: "In corso",
+      desc: "Costruisci l'infrastruttura che serve per poter dire sì a un cliente diretto: senza questo, l'indipendenza resta solo un'idea.",
+      items: ["P.IVA attiva", "Assicurazione professionale", "Sistema di prenotazione tuo", "Listino prezzi personale"]
+    },
+    {
+      id: 3, tag: "Rango III", label: "Cordata", state: "locked",
+      title: "Cordata", stateLabel: "Da raggiungere",
+      desc: "Legati sulla stessa corda, ma ognuno con la propria linea: lavori ancora con la scuola, ma inizi a prendere clienti diretti in parallelo.",
+      items: ["Primi clienti diretti", "Reputazione propria (recensioni, passaparola)", "Gestione doppio canale", "Primi confronti di prezzo reali"]
+    },
+    {
+      id: 4, tag: "Rango IV", label: "Vetta", state: "locked",
+      title: "Vetta", stateLabel: "Rango finale",
+      desc: "Indipendenza reale: il flusso di clienti diretti basta a reggere l'attività. Da qui puoi anche rientrare in Gilda come mentore.",
+      items: ["Flusso diretto sufficiente", "Validazione di un mentore della Gilda", "Possibilità di diventare mentore", "Nome e reputazione indipendenti dalla scuola"]
+    }
+  ];
+
+  var nodesEl = document.getElementById('trailNodes');
+  var detailEl = document.getElementById('trailDetail');
+  var fgEl = document.getElementById('trailFg');
+
+  var shieldSvg = '<svg viewBox="0 0 20 23" xmlns="http://www.w3.org/2000/svg">' +
+    '<path class="seal-shield" d="M10 1L18 4.2V10.5C18 15.5 14.7 19.7 10 21.5C5.3 19.7 2 15.5 2 10.5V4.2L10 1Z" stroke-width="1.3"/>' +
+    '<path class="seal-mark" d="M10 5.5V16.5M6.5 9H13.5" stroke-width="1.1"/>' +
+    '</svg>';
+
+  function render(activeId){
+    nodesEl.innerHTML = '';
+    RANKS.forEach(function(r){
+      var btn = document.createElement('button');
+      btn.className = 'trail-node is-' + r.state;
+      btn.setAttribute('role','tab');
+      btn.setAttribute('aria-selected', String(r.id === activeId));
+      btn.innerHTML =
+        '<span class="trail-seal">' + shieldSvg + '</span>' +
+        '<span class="label">' + r.label + '</span>' +
+        '<span class="rank-tag">' + r.tag + '</span>';
+      btn.addEventListener('click', function(){ showDetail(r.id); });
+      nodesEl.appendChild(btn);
+    });
+
+    var doneCount = RANKS.filter(function(r){ return r.state === 'done'; }).length;
+    var pct = (doneCount / (RANKS.length - 1)) * 100;
+    requestAnimationFrame(function(){ fgEl.style.width = pct + '%'; });
+  }
+
+  function showDetail(id){
+    var r = RANKS.find(function(x){ return x.id === id; });
+    var stateClass = 'state-active';
+    detailEl.innerHTML =
+      '<div class="trail-detail-head">' +
+        '<div><span class="eyebrow">' + r.tag + '</span><h3>' + r.title + '</h3></div>' +
+        '<span class="state ' + stateClass + '">' + r.stateLabel + '</span>' +
+      '</div>' +
+      '<p class="desc">' + r.desc + '</p>' +
+      '<ul>' + r.items.map(function(i){ return '<li>' + i + '</li>'; }).join('') + '</ul>';
+    render(id);
+  }
+
+  showDetail(2);
+})();
+</script>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
