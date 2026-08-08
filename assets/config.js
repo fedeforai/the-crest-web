@@ -1,10 +1,11 @@
 /* The Crest Guild — public site config (no secrets).
  *
- * Formspree: create forms "candidatura" and "quiz-lead" in project THE CREST,
- * restrict domain to fedeforai.github.io, paste the public Form IDs below.
+ * Formspree: forms candidatura + quiz-lead in project THE CREST.
+ * Restrict to Domain: thecrestguild.com (live on Vercel).
  * Never commit a Formspree Deploy Key.
  *
  * GA4: paste Measurement ID (G-XXXXXXXX). Leave placeholder to disable tracking.
+ * Canonical site: https://www.thecrestguild.com
  */
 window.CREST_CONFIG = {
   /* Formspree public Form IDs (not Deploy Key) */

@@ -116,3 +116,13 @@ Puoi lasciare Pages attivo come mirror, oppure disabilitarlo in Settings → Pag
 - [ ] GA4 creato con URL corretto + ID in config
 
 Quando hai fatto login Vercel (o mi dici “committa e pusha”), il passo successivo è push + collegamento dominio.
+
+
+---
+
+## Stato attuale (go-live)
+
+- Dominio live: https://www.thecrestguild.com (apex → www)
+- Progetto Vercel ufficiale: **`the-crest-web-sbun`** (team frostdesk)
+- Progetti duplicati da archiviare: `the-crest-web`, `the-crest-web-zfv6`
+- Checklist operativa: [`GO-LIVE-CHECKLIST.md`](GO-LIVE-CHECKLIST.md)

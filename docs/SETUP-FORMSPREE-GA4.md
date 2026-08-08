@@ -1,7 +1,7 @@
 # Setup Formspree + GA4 — The Crest Guild
 
 Guida operativa per collegare lead capture e analytics al sito statico
-(`fedeforai.github.io/the-crest-web`).
+(`https://www.thecrestguild.com`).
 
 Config da aggiornare: [`assets/config.js`](../assets/config.js)
 
@@ -14,8 +14,8 @@ Apri il progetto **THE CREST** su [formspree.io](https://formspree.io).
 ### Impostazioni progetto (una volta)
 
 1. Vai su **Project settings**
-2. **Restrict to Domain:** `fedeforai.github.io`  
-   (senza `https://`; in Wave 2 aggiungerai anche il dominio custom)
+2. **Restrict to Domain:** `thecrestguild.com`  
+   (senza `https://`; se i submit da www falliscono, usa `www.thecrestguild.com`)
 3. **Non** mettere il Deploy Key nel codice / README / chat
 
 ### Form A — `candidatura`
@@ -69,6 +69,13 @@ Apri il progetto **THE CREST** su [formspree.io](https://formspree.io).
 
 - Notifications → stessa inbox `fed@armoflow.com`
 - Eventualmente tag/label diverso da `candidatura` per filtrare in inbox
+
+### Form ID già in produzione
+
+| Form | Form ID | Endpoint |
+|------|---------|----------|
+| candidatura | `mbgrdkbz` | `https://formspree.io/f/mbgrdkbz` |
+| quiz-lead | `mjybgozj` | `https://formspree.io/f/mjybgozj` |
 
 ### Checklist Formspree
 
