@@ -197,8 +197,8 @@ Tre prodotti, una sola persona da servire: il maestro di sci che vuole smettere 
 ### Behind
 - Eyebrow: Chi c'è dietro
 - H2: ArmoFlow Ltd
-- P: La società che possiede e sviluppa i tre prodotti. "ArmoFlow" compare sul sito istituzionale e nelle comunicazioni ufficiali. Non sostituisce mai il nome del prodotto quando parli con un maestro o un cliente.
-- Entità: Usato su contratti, fatture e comunicazioni ufficiali. Software operativo per attività di servizio moderne.
+- P: Società dietro The Crest Guild, FrostDesk e Vaelmont. Tre prodotti distinti, stesso obiettivo: dare al professionista indipendente gli strumenti giusti.
+- Società: Costruisce e gestisce i tre prodotti. Sul sito e nei documenti ufficiali trovi questo nome; sul lavoro di tutti i giorni restano Crest Guild, FrostDesk e Vaelmont.
 - Tre marchi: Ogni prodotto ha un tono diverso perché risolve un problema diverso. FrostDesk è operativo, la Gilda è educativa, Vaelmont è premium e rivolto al cliente finale.
 - Dopo: Entri in Gilda per le fondamenta. Quando sei pronto, FrostDesk ti fa gestire i clienti diretti senza tornare al caos.
 
