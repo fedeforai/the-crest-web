@@ -5,8 +5,6 @@
    Tokens: assets/tokens.css
    ============================================================ */
 
-@import url('tokens.css');
-
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 
@@ -760,6 +758,7 @@ body.intro-lock{ overflow:hidden; }
 
 /* ---------- quiz ---------- */
 .quiz-shell{ max-width:640px; margin:0 auto; }
+#quizBody{ min-height:min(52vh, 420px); }
 .quiz-progress{
   height:3px; background:var(--border); border-radius:99px; margin-bottom:44px; overflow:hidden;
 }
