@@ -240,7 +240,7 @@ h3,h4{
 
 
 /* ---------- guild trail (interactive horizontal path) ---------- */
-.trail{ padding:20px 0 0; }
+.trail{ padding:20px 0 0; min-height:min(48vh, 380px); }
 .trail-track{
   position:relative;
   padding:0 10px;
