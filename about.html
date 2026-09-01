@@ -25,6 +25,9 @@
 <script>
 (function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="assets/style-guild.css">
 <script src="assets/config.js"></script>
 <script src="assets/analytics.js"></script>
@@ -35,8 +38,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest theme-dark-only" src="assets/img/crest-mark-white.png" alt="" width="28" height="34">
-      <img class="brand-crest theme-light-only" src="assets/img/crest-mark-dark.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="assets/img/crest-mark-white.png" alt="" width="28" height="25">
+      <img class="brand-crest theme-light-only" src="assets/img/crest-mark-dark.png" alt="" width="28" height="37">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Principale">
@@ -93,7 +96,7 @@
     <div class="mv-grid stagger">
       <div class="mv-block reveal">
         <span class="kicker">Mission</span>
-        <h3>Cosa facciamo, per chi</h3>
+        <h2>Cosa facciamo, per chi</h2>
         <p>Aiutiamo i maestri di sci a costruire un'attività ordinata e
           autonoma. Meno caos operativo, più sistemi che tengono.</p>
         <div class="kw-pills">
@@ -105,7 +108,7 @@
       </div>
       <div class="mv-block reveal">
         <span class="kicker">Cosa non siamo</span>
-        <h3>Niente scorciatoie</h3>
+        <h2>Niente scorciatoie</h2>
         <p>Non siamo uno strumento generico. Non promettiamo automazione totale.
           Promettiamo controllo: sai dove sei e cosa fare dopo.</p>
       </div>
@@ -118,14 +121,14 @@
     <div class="mv-grid stagger">
       <div class="mv-block reveal">
         <span class="kicker">Vision</span>
-        <h3>Il mondo che vogliamo aiutare a creare</h3>
+        <h2>Il mondo che vogliamo aiutare a creare</h2>
         <p>Un futuro in cui ogni maestro indipendente ha sistemi operativi
           all'altezza di un'organizzazione grande, senza doverli gestire da
           solo tutto il giorno.</p>
       </div>
       <div class="mv-block reveal">
         <span class="kicker">Presente + futuro</span>
-        <h3>Come si collegano</h3>
+        <h2>Come si collegano</h2>
         <p>La mission sistema il presente, un rango alla volta. La vision
           guarda al lungo periodo: sistemi seri per chi lavora da solo.</p>
       </div>
@@ -226,27 +229,27 @@
     <div class="value-cards stagger">
       <div class="value-card reveal">
         <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16M4 6h16M4 18h10" stroke-linecap="round"/></svg></span>
-        <h4>Chiarezza</h4>
+        <h3>Chiarezza</h3>
         <p>Sistemi semplici che fanno cose complesse. Togliamo rumore, non ne aggiungiamo.</p>
       </div>
       <div class="value-card reveal">
         <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L20 6.5V12C20 16.5 16.5 20 12 21C7.5 20 4 16.5 4 12V6.5L12 3Z" stroke-linejoin="round"/></svg></span>
-        <h4>Affidabilità</h4>
+        <h3>Affidabilità</h3>
         <p>Funziona quando conta. Promesse tenute, niente sorprese sulle scadenze.</p>
       </div>
       <div class="value-card reveal">
         <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h4>Elevazione</h4>
+        <h3>Elevazione</h3>
         <p>Far parte della Gilda ti fa apparire più professionale. Il percorso alza lo standard, non lo sostituisce.</p>
       </div>
       <div class="value-card reveal">
         <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
-        <h4>Autonomia</h4>
+        <h3>Autonomia</h3>
         <p>Non dipendi da noi per ogni dettaglio. Funziona anche senza supervisione.</p>
       </div>
       <div class="value-card reveal">
         <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke-linejoin="round"/></svg></span>
-        <h4>Precisione</h4>
+        <h3>Precisione</h3>
         <p>Niente lasciato al caso, dai criteri di rango ai contenuti di ogni tappa.</p>
       </div>
     </div>
@@ -281,24 +284,24 @@
         <div class="foot-brand">
           <img class="theme-dark-only" src="assets/img/crest-mark-white.png" alt="">
           <img class="theme-light-only" src="assets/img/crest-mark-dark.png" alt="">
-          <h5>The Crest Guild</h5>
+          <h2>The Crest Guild</h2>
         </div>
         <p style="max-width:280px;">Per maestri di sci che vogliono uscire dal solo
           modello scuola, un rango alla volta.</p>
       </div>
       <div>
-        <h5>Percorso</h5>
+        <h2>Percorso</h2>
         <a href="pathways.html">I Ranghi</a>
         <a href="quiz.html">Quiz</a>
         <a href="about.html">Chi Siamo</a>
       </div>
       <div>
-        <h5>Ecosystem ArmoFlow</h5>
+        <h2>Ecosystem ArmoFlow</h2>
         <a href="ecosystem.html">Come sono collegati i prodotti</a>
         <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
-        <h5>Legal</h5>
+        <h2>Legal</h2>
         <a id="footerContact" href="pathways.html#candidati">Candidati via form</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>

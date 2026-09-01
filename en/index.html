@@ -25,6 +25,9 @@
 <script>
 (function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/style-guild.css">
 <script src="../assets/config.js"></script>
 <script src="../assets/analytics.js"></script>
@@ -66,27 +69,33 @@
   <span class="intro-rule" aria-hidden="true"></span>
 </div>
 <script>
-  document.body.classList.add('intro-lock');
+(function(){
   var ov = document.getElementById('introOverlay');
+  if (!ov) return;
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isNarrow = window.matchMedia('(max-width:900px)').matches;
-  if (prefersReduced || isNarrow) {
+  var seen = false;
+  try { seen = sessionStorage.getItem('crest_intro_seen') === '1'; } catch (e) {}
+  if (prefersReduced || isNarrow || seen) {
     ov.style.display = 'none';
     document.body.classList.remove('intro-lock');
-  } else {
-    ov.classList.add('is-leaving');
-    setTimeout(function(){
-      ov.style.display = 'none';
-      document.body.classList.remove('intro-lock');
-    }, 3200);
+    return;
   }
+  document.body.classList.add('intro-lock');
+  ov.classList.add('is-leaving');
+  try { sessionStorage.setItem('crest_intro_seen', '1'); } catch (e) {}
+  setTimeout(function(){
+    ov.style.display = 'none';
+    document.body.classList.remove('intro-lock');
+  }, 3200);
+})();
 </script>
 
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="34">
-      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="25">
+      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="37">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Main">
@@ -346,12 +355,12 @@
     </div>
     <div class="outcome-grid reveal">
       <div class="outcome-col">
-        <h4>Before</h4>
+        <h3>Before</h3>
         <p>Schedule and rates from the school only. No clients of your own. Zero business infrastructure.</p>
       </div>
       <div class="outcome-arrow" aria-hidden="true">→</div>
       <div class="outcome-col">
-        <h4>After Foundations</h4>
+        <h3>After Foundations</h3>
         <p>Business registration, insurance, your own price list, and a booking channel of your own. Ready for your first direct clients.</p>
       </div>
     </div>
@@ -387,24 +396,24 @@
         <div class="foot-brand">
           <img class="theme-dark-only" src="../assets/img/crest-mark-white.png" alt="">
           <img class="theme-light-only" src="../assets/img/crest-mark-dark.png" alt="">
-          <h5>The Crest Guild</h5>
+          <h2>The Crest Guild</h2>
         </div>
         <p style="max-width:280px;">For ski instructors who want to move beyond the school-only model,
           one rank at a time.</p>
       </div>
       <div>
-        <h5>Path</h5>
+        <h2>Path</h2>
         <a href="pathways.html">The Ranks</a>
         <a href="quiz.html">Quiz</a>
         <a href="about.html">About Us</a>
       </div>
       <div>
-        <h5>ArmoFlow Ecosystem</h5>
+        <h2>ArmoFlow Ecosystem</h2>
         <a href="ecosystem.html">How the products connect</a>
         <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
-        <h5>Legal</h5>
+        <h2>Legal</h2>
         <a id="footerContact" href="pathways.html#candidati">Apply via the form</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../terms.html">Terms</a>

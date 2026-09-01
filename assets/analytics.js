@@ -85,8 +85,50 @@
     } catch (e) { /* ignore */ }
   }
 
+  function clearConsentSpace() {
+    document.body.classList.remove('consent-open');
+    document.documentElement.style.removeProperty('--consent-offset');
+  }
+
+  function syncConsentSpace(banner) {
+    if (!banner || banner.hidden || !banner.isConnected) {
+      clearConsentSpace();
+      return;
+    }
+    document.body.classList.add('consent-open');
+    var rect = banner.getBoundingClientRect();
+    var gap = 24;
+    var offset = Math.max(96, Math.ceil(window.innerHeight - rect.top + gap));
+    document.documentElement.style.setProperty('--consent-offset', offset + 'px');
+  }
+
   function hideBanner(banner) {
-    if (banner) banner.hidden = true;
+    if (banner) {
+      banner.hidden = true;
+      if (banner._consentRO) {
+        banner._consentRO.disconnect();
+        banner._consentRO = null;
+      }
+    }
+    clearConsentSpace();
+  }
+
+  function watchConsentSpace(banner) {
+    function measure() { syncConsentSpace(banner); }
+    measure();
+    requestAnimationFrame(measure);
+    if (typeof ResizeObserver === 'function') {
+      var ro = new ResizeObserver(measure);
+      ro.observe(banner);
+      banner._consentRO = ro;
+    }
+    window.addEventListener('resize', function onResize() {
+      if (!banner.isConnected || banner.hidden) {
+        window.removeEventListener('resize', onResize);
+        return;
+      }
+      measure();
+    });
   }
 
   function consentCopy() {
@@ -130,7 +172,6 @@
     title.id = 'consentTitle';
     title.style.color = 'var(--text)';
     title.style.fontWeight = '600';
-    title.style.marginBottom = '8px';
     title.textContent = copy.title;
 
     var body = document.createElement('p');
@@ -172,6 +213,7 @@
     banner.appendChild(body);
     banner.appendChild(actions);
     document.body.appendChild(banner);
+    watchConsentSpace(banner);
     return banner;
   }
 
@@ -201,9 +243,11 @@
     try { localStorage.removeItem(STORAGE_KEY); } catch (err) { /* ignore */ }
     denyAnalytics();
     var existing = document.getElementById('consentBanner');
-    if (existing) existing.remove();
-    buildBanner();
-    var banner = document.getElementById('consentBanner');
+    if (existing) {
+      hideBanner(existing);
+      existing.remove();
+    }
+    var banner = buildBanner();
     if (banner && banner.scrollIntoView) banner.scrollIntoView({ behavior: 'smooth', block: 'end' });
   });
 
