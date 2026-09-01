@@ -1,7 +1,6 @@
 /* The Crest Guild — placement quiz */
 (function () {
   var staticEl = document.getElementById('quizStaticContent');
-  if (staticEl) staticEl.style.display = 'none';
 
   var lang = (document.documentElement.lang || 'it').slice(0, 2).toLowerCase();
   if (lang !== 'en' && lang !== 'fr') lang = 'it';
@@ -509,4 +508,5 @@
   }
 
   renderQuestion();
+  if (staticEl) staticEl.style.display = 'none';
 })();
