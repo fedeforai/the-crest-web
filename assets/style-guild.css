@@ -474,6 +474,18 @@ body.intro-lock{ overflow:hidden; }
   #introOverlay .intro-rule,
   #introOverlay.is-leaving{ animation:none !important; opacity:1; transform:none; stroke-dashoffset:0; }
 }
+.intro-skip{
+  position:absolute; bottom:28px; right:28px;
+  background:transparent; border:0.5px solid var(--neutral-600);
+  color:var(--text-on-onyx); font-family:var(--font-body);
+  font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+  padding:10px 14px; min-height:44px; cursor:pointer;
+  z-index:1;
+}
+.intro-skip:hover{ border-color:var(--color-gold); }
+@media (max-width:900px){
+  .intro-skip{ display:none; }
+}
 
 /* ---------- glass card (hero reinforcement) ---------- */
 .hero-v2-inner{
@@ -1107,6 +1119,36 @@ section.tight{ padding:72px 0; }
   margin-top:16px; line-height:1.12;
 }
 .section-head p{ color:var(--text-dim); margin-top:14px; font-size:15.5px; line-height:1.5; }
+.need-bridge{ padding-top:48px; padding-bottom:8px; }
+.need-bridge-title{
+  font-size:clamp(26px,3.2vw,36px);
+  margin:12px 0 28px;
+  max-width:18em;
+}
+.need-bridge-list{
+  list-style:none; margin:0; padding:0;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:28px;
+}
+.need-bridge-list li{ border-top:0.5px solid var(--border); padding-top:16px; }
+.need-bridge-list a{
+  display:block;
+  font-family:var(--font-display);
+  font-size:20px; font-weight:500; color:var(--text);
+  margin-bottom:8px;
+}
+.need-bridge-list a:hover{ color:var(--accent-readable); }
+.need-bridge-list span{
+  display:block; font-size:14px; color:var(--text-dim); line-height:1.5;
+}
+@media (max-width:760px){
+  .need-bridge-list{ grid-template-columns:1fr; gap:20px; }
+}
+.path-meta{
+  font-size:13px; color:var(--text-dim2); line-height:1.5;
+  margin:10px 0 0;
+}
+.card .path-meta{ margin-top:12px; margin-bottom:16px; }
+.service-card .path-meta{ margin-bottom:14px; }
 
 .rule{ border:none; border-top:0.5px solid var(--border); margin:0; }
 

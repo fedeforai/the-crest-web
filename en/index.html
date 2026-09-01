@@ -67,27 +67,44 @@
   </svg>
   <span class="intro-word">The Crest Guild</span>
   <span class="intro-rule" aria-hidden="true"></span>
+  <button type="button" class="intro-skip" id="introSkip">Skip</button>
 </div>
 <script>
 (function(){
   var ov = document.getElementById('introOverlay');
   if (!ov) return;
+  var skipBtn = document.getElementById('introSkip');
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isNarrow = window.matchMedia('(max-width:900px)').matches;
   var seen = false;
+  var done = false;
   try { seen = sessionStorage.getItem('crest_intro_seen') === '1'; } catch (e) {}
-  if (prefersReduced || isNarrow || seen) {
+
+  function finish(){
+    if (done) return;
+    done = true;
     ov.style.display = 'none';
     document.body.classList.remove('intro-lock');
+    try { sessionStorage.setItem('crest_intro_seen', '1'); } catch (e) {}
+    document.removeEventListener('keydown', onKey);
+  }
+  function onKey(e){
+    if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      finish();
+    }
+  }
+
+  if (prefersReduced || isNarrow || seen) {
+    finish();
     return;
   }
   document.body.classList.add('intro-lock');
   ov.classList.add('is-leaving');
-  try { sessionStorage.setItem('crest_intro_seen', '1'); } catch (e) {}
-  setTimeout(function(){
-    ov.style.display = 'none';
-    document.body.classList.remove('intro-lock');
-  }, 3200);
+  ov.addEventListener('click', finish);
+  if (skipBtn) skipBtn.addEventListener('click', function(e){ e.stopPropagation(); finish(); });
+  document.addEventListener('keydown', onKey);
+  setTimeout(finish, 3200);
 })();
 </script>
 
@@ -198,6 +215,27 @@
   </div>
 </section>
 
+<section class="tight need-bridge" id="serve" aria-labelledby="needBridgeTitle">
+  <div class="wrap">
+    <p class="need-bridge-kicker eyebrow">What you need, in this order</p>
+    <h2 id="needBridgeTitle" class="need-bridge-title">Rank, a way in, then the climb.</h2>
+    <ol class="need-bridge-list">
+      <li>
+        <a href="quiz.html">Know where you start</a>
+        <span>A two-minute quiz. No sign-up for the questions.</span>
+      </li>
+      <li>
+        <a href="#vie">Pick an entry path</a>
+        <span>Three ways in. Take the honest one for today, not the most ambitious.</span>
+      </li>
+      <li>
+        <a href="#metodo">Move up with verifiable criteria</a>
+        <span>Objective checklists until Summit, then a mentor's go-ahead.</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <section class="tight" id="metodo">
   <div class="wrap">
     <div class="section-head reveal">
@@ -286,7 +324,7 @@
   <div class="divider-crest" aria-hidden="true"><span class="diamond"></span></div>
 </div>
 
-<section>
+<section id="vie">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">The Guild's paths</span>
@@ -297,40 +335,23 @@
       <div class="card reveal">
         <span class="tag">Diagnosis</span>
         <h3>Independent Review</h3>
-        <p class="desc">To understand, before putting time or money in, where your profile and
-          processes are losing value.</p>
-        <ul>
-          <li>Real strengths</li>
-          <li>Business gaps</li>
-          <li>3 practical priorities</li>
-          <li>Recommended next step</li>
-        </ul>
-        <a class="card-cta" href="pathways.html#revisione" data-track="cta_click">Request a review</a>
+        <p class="desc">To understand, before putting time or money in, where your profile and processes are losing value.</p>
+        <p class="path-meta">Summary. Duration, what happens after you ask, and the form: on the Ranks page.</p>
+        <a class="card-cta" href="pathways.html#revisione" data-track="cta_click">See the review</a>
       </div>
       <div class="card reveal">
         <span class="tag">Implementation</span>
         <h3>Operational Support</h3>
-        <p class="desc">For those who already know what is needed and want concrete help turning it
-          into systems, messaging, and processes that hold.</p>
-        <ul>
-          <li>Profile/offer setup</li>
-          <li>Client messaging and materials</li>
-          <li>Client acquisition path</li>
-          <li>Structured follow-up</li>
-        </ul>
-        <a class="card-cta" href="pathways.html#affiancamento" data-track="cta_click">Request support</a>
+        <p class="desc">For those who already know what is needed and want concrete help turning it into systems, messaging, and processes that hold.</p>
+        <p class="path-meta">Summary. Duration, what happens after you ask, and the form: on the Ranks page.</p>
+        <a class="card-cta" href="pathways.html#affiancamento" data-track="cta_click">See operational support</a>
       </div>
       <div class="card reveal">
         <span class="tag">Development</span>
         <h3>Mastery Path</h3>
         <p class="desc">For those who want structure and direction over time, not just a tactical patch.</p>
-        <ul>
-          <li>Professional confidence</li>
-          <li>Career direction</li>
-          <li>Strategic preparation</li>
-          <li>Toward independent work</li>
-        </ul>
-        <a class="card-cta" href="pathways.html#maestria" data-track="cta_click">Apply for this path</a>
+        <p class="path-meta">Summary. Duration, what happens after you ask, and the form: on the Ranks page.</p>
+        <a class="card-cta" href="pathways.html#maestria" data-track="cta_click">See the path</a>
       </div>
     </div>
   </div>
