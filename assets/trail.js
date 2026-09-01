@@ -1,7 +1,5 @@
 /* The Crest Guild — rank trail UI */
 (function(){
-  var staticEl = document.getElementById('rankStaticContent');
-
   var lang = (document.documentElement.lang || 'it').slice(0, 2).toLowerCase();
   if (lang !== 'en' && lang !== 'fr') lang = 'it';
 
@@ -171,7 +169,8 @@
     requestAnimationFrame(function(){ fgEl.style.width = pct + '%'; });
   }
 
-  function showDetail(id){
+  function showDetail(id, options){
+    options = options || {};
     var r = RANKS.find(function(x){ return x.id === id; });
     clear(detailEl);
     detailEl.setAttribute('aria-labelledby', 'trail-tab-' + id);
@@ -189,6 +188,8 @@
     detailEl.appendChild(ul);
     render(id);
 
+    if (options.scroll === false) return;
+
     var activeBtn = document.getElementById('trail-tab-' + id);
     if (activeBtn && typeof activeBtn.scrollIntoView === 'function') {
       try {
@@ -199,8 +200,7 @@
     }
   }
 
-  showDetail(2);
-  if (staticEl) staticEl.style.display = 'none';
+  showDetail(2, { scroll: false });
 
   var params = new URLSearchParams(window.location.search);
   var intent = params.get('intent');
