@@ -1,7 +1,6 @@
 /* The Crest Guild — rank trail UI */
 (function(){
   var staticEl = document.getElementById('rankStaticContent');
-  if (staticEl) staticEl.style.display = 'none';
 
   var lang = (document.documentElement.lang || 'it').slice(0, 2).toLowerCase();
   if (lang !== 'en' && lang !== 'fr') lang = 'it';
@@ -201,6 +200,7 @@
   }
 
   showDetail(2);
+  if (staticEl) staticEl.style.display = 'none';
 
   var params = new URLSearchParams(window.location.search);
   var intent = params.get('intent');
