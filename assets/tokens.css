@@ -4,8 +4,6 @@
    Theme: data-theme="dark" (default) | "light"
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;700&display=swap');
-
 :root,
 html[data-theme="dark"]{
   /* Core palette */
@@ -60,10 +58,10 @@ html[data-theme="dark"]{
   --state-pending: var(--color-warning);
   --state-active: var(--color-success);
   --text-dim: color-mix(in srgb, var(--text-on-onyx) 78%, transparent);
-  --text-dim2: color-mix(in srgb, var(--text-on-onyx) 58%, transparent);
+  --text-dim2: color-mix(in srgb, var(--text-on-onyx) 64%, transparent);
   --text-on-dark: var(--text-on-onyx);
   --text-on-dark-dim: color-mix(in srgb, var(--text-on-onyx) 78%, transparent);
-  --text-on-dark-dim2: color-mix(in srgb, var(--text-on-onyx) 58%, transparent);
+  --text-on-dark-dim2: color-mix(in srgb, var(--text-on-onyx) 64%, transparent);
   --accent-readable: var(--color-gold);
   --glass-bg: rgba(43, 53, 64, 0.42);
   --glass-border: rgba(241, 238, 230, 0.14);
@@ -85,7 +83,7 @@ html[data-theme="light"]{
   /* Keep light ink for dark panels (trail-detail, seals, CTAs on onyx) */
   --text-on-dark: #EDEAE1;
   --text-on-dark-dim: color-mix(in srgb, #EDEAE1 78%, transparent);
-  --text-on-dark-dim2: color-mix(in srgb, #EDEAE1 58%, transparent);
+  --text-on-dark-dim2: color-mix(in srgb, #EDEAE1 64%, transparent);
   --ivory: var(--text-on-parchment);
   --accent-readable: var(--color-gold-on-parchment);
   --summit-blue: var(--color-gold-on-parchment);

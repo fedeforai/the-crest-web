@@ -25,6 +25,9 @@
 <script>
 (function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/style-guild.css">
 <script src="../assets/config.js"></script>
 <script src="../assets/analytics.js"></script>
@@ -35,8 +38,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="34">
-      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="25">
+      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="37">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Principale">
@@ -93,7 +96,7 @@
     <div class="mv-grid stagger">
       <div class="mv-block reveal">
         <span class="kicker">Mission</span>
-        <h3>Ce que nous faisons, et pour qui</h3>
+        <h2>Ce que nous faisons, et pour qui</h2>
         <p>Nous aidons les moniteurs de ski à construire une activité organisée et
           autonome. Moins de chaos opérationnel, plus de systèmes qui tiennent.</p>
         <div class="kw-pills">
@@ -105,7 +108,7 @@
       </div>
       <div class="mv-block reveal">
         <span class="kicker">Ce que nous ne sommes pas</span>
-        <h3>Pas de raccourcis</h3>
+        <h2>Pas de raccourcis</h2>
         <p>Nous ne sommes pas un outil générique. Nous ne promettons pas une automatisation totale.
           Nous promettons du contrôle : vous savez où vous en êtes et quoi faire ensuite.</p>
       </div>
@@ -118,14 +121,14 @@
     <div class="mv-grid stagger">
       <div class="mv-block reveal">
         <span class="kicker">Vision</span>
-        <h3>Le monde que nous voulons contribuer à créer</h3>
+        <h2>Le monde que nous voulons contribuer à créer</h2>
         <p>Un futur où chaque moniteur indépendant a des systèmes opérationnels
           au niveau d'une grande organisation, sans avoir à les gérer
           seul toute la journée.</p>
       </div>
       <div class="mv-block reveal">
         <span class="kicker">Présent + futur</span>
-        <h3>Comment ils se rejoignent</h3>
+        <h2>Comment ils se rejoignent</h2>
         <p>La mission règle le présent, un rang à la fois. La vision
           vise le long terme : des systèmes sérieux pour ceux qui travaillent seuls.</p>
       </div>
@@ -228,27 +231,27 @@
     <div class="value-cards stagger">
       <div class="value-card reveal">
         <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16M4 6h16M4 18h10" stroke-linecap="round"/></svg></span>
-        <h4>Clarté</h4>
+        <h3>Clarté</h3>
         <p>Des systèmes simples qui font des choses complexes. Nous enlevons du bruit, nous n'en ajoutons pas.</p>
       </div>
       <div class="value-card reveal">
         <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L20 6.5V12C20 16.5 16.5 20 12 21C7.5 20 4 16.5 4 12V6.5L12 3Z" stroke-linejoin="round"/></svg></span>
-        <h4>Fiabilité</h4>
+        <h3>Fiabilité</h3>
         <p>Ça fonctionne quand ça compte. Promesses tenues, aucune surprise sur les échéances.</p>
       </div>
       <div class="value-card reveal">
         <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h4>Élévation</h4>
+        <h3>Élévation</h3>
         <p>Faire partie de la Guilde vous rend plus professionnel. Le parcours élève le standard, il ne le remplace pas.</p>
       </div>
       <div class="value-card reveal">
         <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
-        <h4>Autonomie</h4>
+        <h3>Autonomie</h3>
         <p>Vous ne dépendez pas de nous pour chaque détail. Ça fonctionne même sans supervision.</p>
       </div>
       <div class="value-card reveal">
         <span class="vc-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke-linejoin="round"/></svg></span>
-        <h4>Précision</h4>
+        <h3>Précision</h3>
         <p>Rien n'est laissé au hasard, des critères de rang au contenu de chaque étape.</p>
       </div>
     </div>
@@ -283,24 +286,24 @@
         <div class="foot-brand">
           <img class="theme-dark-only" src="../assets/img/crest-mark-white.png" alt="">
           <img class="theme-light-only" src="../assets/img/crest-mark-dark.png" alt="">
-          <h5>The Crest Guild</h5>
+          <h2>The Crest Guild</h2>
         </div>
         <p style="max-width:280px;">Pour les moniteurs de ski qui veulent sortir du seul modèle école,
           un rang à la fois.</p>
       </div>
       <div>
-        <h5>Parcours</h5>
+        <h2>Parcours</h2>
         <a href="pathways.html">Les Rangs</a>
         <a href="quiz.html">Quiz</a>
         <a href="about.html">À propos</a>
       </div>
       <div>
-        <h5>Écosystème ArmoFlow</h5>
+        <h2>Écosystème ArmoFlow</h2>
         <a href="ecosystem.html">Comment les produits sont liés</a>
         <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
-        <h5>Mentions légales</h5>
+        <h2>Mentions légales</h2>
         <a id="footerContact" href="pathways.html#candidati">Candidater via le formulaire</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../terms.html">Terms</a>

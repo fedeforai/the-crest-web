@@ -25,6 +25,9 @@
 <script>
 (function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/style-guild.css">
 <script src="../assets/config.js"></script>
 <script src="../assets/analytics.js"></script>
@@ -36,27 +39,27 @@
     {
       "@type": "Question",
       "name": "Do you have an active business registration?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Il quiz valuta se hai già una P.IVA attiva come passo verso l'indipendenza."}
+      "acceptedAnswer": {"@type": "Answer", "text": "The quiz checks whether you already have an active business registration as a step toward independence."}
     },
     {
       "@type": "Question",
       "name": "Do you have your own booking system, separate from the school's?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Avere un canale proprio (anche WhatsApp/calendario) è un criterio di rango nella Gilda."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Having your own channel, even WhatsApp or a personal calendar, is one of the Guild's rank criteria."}
     },
     {
       "@type": "Question",
       "name": "Have you ever had at least one client book you directly?",
-      "acceptedAnswer": {"@type": "Answer", "text": "I clienti diretti sono un segnale di passaggio da scuola-only a cordata."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Direct clients are a signal that you are moving from school-only work toward the Rope Team stage."}
     },
     {
       "@type": "Question",
       "name": "Would direct clients alone be enough to cover your expenses?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Se sì, sei vicino al rango Vetta: indipendenza economica reale."}
+      "acceptedAnswer": {"@type": "Answer", "text": "If yes, you are close to the Summit rank: real economic independence."}
     },
     {
       "@type": "Question",
       "name": "What do you want to achieve in the next 12 months?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Chiarezza, indipendenza completa o mentorship: il quiz orienta il prossimo passo."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Clarity, full independence, or mentorship: the quiz points you toward the next step."}
     }
   ]
 }
@@ -68,8 +71,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="34">
-      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="25">
+      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="37">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Main">
@@ -114,10 +117,9 @@
 <main id="main">
 <section class="hero" style="padding-top:112px; padding-bottom:40px;">
   <div class="wrap">
-    <span class="eyebrow">Two minutes. No sign-up for the questions.</span>
+    <span class="eyebrow">No sign-up for the questions</span>
     <h1 style="font-size:clamp(30px,4vw,46px); margin-top:16px;">Where you start,<br>where you want to go.</h1>
-    <p class="lede">Five questions to figure out your starting rank in the Guild
-      and the most useful next step right now.</p>
+    <p class="lede">Five questions. Then your starting rank and the most useful next step.</p>
   </div>
 </section>
 
@@ -126,35 +128,35 @@
 
     <div id="quizStaticContent" class="quiz-static">
       <article>
-        <h3>Do you have an active business registration?</h3>
+        <h2>Do you have an active business registration?</h2>
         <ul>
           <li>No, not yet</li>
           <li>Yes, it's active</li>
         </ul>
       </article>
       <article>
-        <h3>Do you have your own booking system, separate from the school's?</h3>
+        <h2>Do you have your own booking system, separate from the school's?</h2>
         <ul>
           <li>No, I only use the school's</li>
           <li>Yes, I have my own (even just WhatsApp/personal calendar)</li>
         </ul>
       </article>
       <article>
-        <h3>Have you ever had at least one client book you directly?</h3>
+        <h2>Have you ever had at least one client book you directly?</h2>
         <ul>
           <li>No, never</li>
           <li>Yes, a few times</li>
         </ul>
       </article>
       <article>
-        <h3>Would direct clients alone be enough to cover your expenses?</h3>
+        <h2>Would direct clients alone be enough to cover your expenses?</h2>
         <ul>
           <li>No, not at all</li>
           <li>Yes, or almost</li>
         </ul>
       </article>
       <article>
-        <h3>What do you want to achieve in the next 12 months?</h3>
+        <h2>What do you want to achieve in the next 12 months?</h2>
         <ul>
           <li>Get clear on where to start</li>
           <li>Fully move away from the school model</li>
@@ -187,23 +189,23 @@
         <div class="foot-brand">
           <img class="theme-dark-only" src="../assets/img/crest-mark-white.png" alt="">
           <img class="theme-light-only" src="../assets/img/crest-mark-dark.png" alt="">
-          <h5>The Crest Guild</h5>
+          <h2>The Crest Guild</h2>
         </div>
         <p style="max-width:280px;">For ski instructors who want to move beyond the school-only model,
           one rank at a time.</p>
       </div>
       <div>
-        <h5>Path</h5>
+        <h2>Path</h2>
         <a href="pathways.html">The Ranks</a>
         <a href="about.html">About Us</a>
       </div>
       <div>
-        <h5>ArmoFlow Ecosystem</h5>
+        <h2>ArmoFlow Ecosystem</h2>
         <a href="ecosystem.html">How the products connect</a>
         <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
-        <h5>Legal</h5>
+        <h2>Legal</h2>
         <a id="footerContact" href="pathways.html#candidati">Apply via the form</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../terms.html">Terms</a>

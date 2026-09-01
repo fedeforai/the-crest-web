@@ -25,6 +25,9 @@
 <script>
 (function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/style-guild.css">
 <script src="../assets/config.js"></script>
 <script src="../assets/analytics.js"></script>
@@ -47,7 +50,7 @@
       "@type": "WebSite",
       "name": "The Crest Guild",
       "url": "https://www.thecrestguild.com/",
-      "inLanguage": "it-IT"
+      "inLanguage": "fr-FR"
     }
   ]
 }
@@ -64,29 +67,52 @@
   </svg>
   <span class="intro-word">The Crest Guild</span>
   <span class="intro-rule" aria-hidden="true"></span>
+  <button type="button" class="intro-skip" id="introSkip">Passer</button>
 </div>
 <script>
-  document.body.classList.add('intro-lock');
+(function(){
   var ov = document.getElementById('introOverlay');
+  if (!ov) return;
+  var skipBtn = document.getElementById('introSkip');
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isNarrow = window.matchMedia('(max-width:900px)').matches;
-  if (prefersReduced || isNarrow) {
+  var seen = false;
+  var done = false;
+  try { seen = sessionStorage.getItem('crest_intro_seen') === '1'; } catch (e) {}
+
+  function finish(){
+    if (done) return;
+    done = true;
     ov.style.display = 'none';
     document.body.classList.remove('intro-lock');
-  } else {
-    ov.classList.add('is-leaving');
-    setTimeout(function(){
-      ov.style.display = 'none';
-      document.body.classList.remove('intro-lock');
-    }, 3200);
+    try { sessionStorage.setItem('crest_intro_seen', '1'); } catch (e) {}
+    document.removeEventListener('keydown', onKey);
   }
+  function onKey(e){
+    if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      finish();
+    }
+  }
+
+  if (prefersReduced || isNarrow || seen) {
+    finish();
+    return;
+  }
+  document.body.classList.add('intro-lock');
+  ov.classList.add('is-leaving');
+  ov.addEventListener('click', finish);
+  if (skipBtn) skipBtn.addEventListener('click', function(e){ e.stopPropagation(); finish(); });
+  document.addEventListener('keydown', onKey);
+  setTimeout(finish, 3200);
+})();
 </script>
 
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="34">
-      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="25">
+      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="37">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Principale">
@@ -189,6 +215,27 @@
   </div>
 </section>
 
+<section class="tight need-bridge" id="serve" aria-labelledby="needBridgeTitle">
+  <div class="wrap">
+    <p class="need-bridge-kicker eyebrow">Ce qu'il vous faut, dans cet ordre</p>
+    <h2 id="needBridgeTitle" class="need-bridge-title">Rang, voie d'entrée, puis la montée.</h2>
+    <ol class="need-bridge-list">
+      <li>
+        <a href="quiz.html">Savoir d'où vous partez</a>
+        <span>Quiz, deux minutes. Aucune inscription pour répondre aux questions.</span>
+      </li>
+      <li>
+        <a href="#vie">Choisir une voie d'entrée</a>
+        <span>Trois entrées. Prenez celle qui est honnête pour aujourd'hui, pas la plus ambitieuse.</span>
+      </li>
+      <li>
+        <a href="#metodo">Monter de rang avec des critères vérifiables</a>
+        <span>Checklists objectives jusqu'au Sommet, puis le feu vert d'un mentor.</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <section class="tight" id="metodo">
   <div class="wrap">
     <div class="section-head reveal">
@@ -277,7 +324,7 @@
   <div class="divider-crest" aria-hidden="true"><span class="diamond"></span></div>
 </div>
 
-<section>
+<section id="vie">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Les voies de la Guilde</span>
@@ -288,39 +335,23 @@
       <div class="card reveal">
         <span class="tag">Diagnostic</span>
         <h3>Bilan Indépendant</h3>
-        <p class="desc">Pour comprendre, avant d'y mettre du temps ou de l'argent, où profil et
-          processus perdent de la valeur.</p>
-        <ul>
-          <li>Points forts réels</li>
-          <li>Lacunes commerciales</li>
-          <li>3 priorités pratiques</li>
-          <li>Prochaine étape recommandée</li>
-        </ul>
-        <a class="card-cta" href="pathways.html#revisione" data-track="cta_click">Demander un bilan</a>
+        <p class="desc">Pour comprendre, avant d'y mettre du temps ou de l'argent, où profil et processus perdent de la valeur.</p>
+        <p class="path-meta">Synthèse. Durée, suite après la demande et le formulaire : sur la page des Rangs.</p>
+        <a class="card-cta" href="pathways.html#revisione" data-track="cta_click">Voir le bilan</a>
       </div>
       <div class="card reveal">
         <span class="tag">Mise en œuvre</span>
         <h3>Accompagnement Opérationnel</h3>
         <p class="desc">Pour ceux qui savent déjà ce qu'il faut et veulent une aide concrète pour le transformer en systèmes, messages et processus qui tiennent.</p>
-        <ul>
-          <li>Configuration du profil et de l'offre</li>
-          <li>Messages et supports client</li>
-          <li>Parcours d'acquisition</li>
-          <li>Suivi structuré</li>
-        </ul>
-        <a class="card-cta" href="pathways.html#affiancamento" data-track="cta_click">Demander un accompagnement</a>
+        <p class="path-meta">Synthèse. Durée, suite après la demande et le formulaire : sur la page des Rangs.</p>
+        <a class="card-cta" href="pathways.html#affiancamento" data-track="cta_click">Voir l'accompagnement</a>
       </div>
       <div class="card reveal">
         <span class="tag">Développement</span>
         <h3>Parcours de Maîtrise</h3>
         <p class="desc">Pour ceux qui veulent structure et direction dans le temps, pas seulement un correctif tactique.</p>
-        <ul>
-          <li>Confiance professionnelle</li>
-          <li>Orientation de carrière</li>
-          <li>Préparation stratégique</li>
-          <li>Vers le travail indépendant</li>
-        </ul>
-        <a class="card-cta" href="pathways.html#maestria" data-track="cta_click">Candidater à ce parcours</a>
+        <p class="path-meta">Synthèse. Durée, suite après la demande et le formulaire : sur la page des Rangs.</p>
+        <a class="card-cta" href="pathways.html#maestria" data-track="cta_click">Voir le parcours</a>
       </div>
     </div>
   </div>
@@ -345,12 +376,12 @@
     </div>
     <div class="outcome-grid reveal">
       <div class="outcome-col">
-        <h4>Avant</h4>
+        <h3>Avant</h3>
         <p>Planning et tarifs uniquement de l'école. Aucun client propre. Zéro infrastructure commerciale.</p>
       </div>
       <div class="outcome-arrow" aria-hidden="true">→</div>
       <div class="outcome-col">
-        <h4>Après les Fondations</h4>
+        <h3>Après les Fondations</h3>
         <p>Immatriculation, assurance, votre propre grille tarifaire et un canal de réservation à vous. Prêts pour vos premiers clients directs.</p>
       </div>
     </div>
@@ -386,24 +417,24 @@
         <div class="foot-brand">
           <img class="theme-dark-only" src="../assets/img/crest-mark-white.png" alt="">
           <img class="theme-light-only" src="../assets/img/crest-mark-dark.png" alt="">
-          <h5>The Crest Guild</h5>
+          <h2>The Crest Guild</h2>
         </div>
         <p style="max-width:280px;">Pour les moniteurs de ski qui veulent sortir du seul modèle école,
           un rang à la fois.</p>
       </div>
       <div>
-        <h5>Parcours</h5>
+        <h2>Parcours</h2>
         <a href="pathways.html">Les Rangs</a>
         <a href="quiz.html">Quiz</a>
         <a href="about.html">À propos</a>
       </div>
       <div>
-        <h5>Écosystème ArmoFlow</h5>
+        <h2>Écosystème ArmoFlow</h2>
         <a href="ecosystem.html">Comment les produits sont liés</a>
         <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
-        <h5>Mentions légales</h5>
+        <h2>Mentions légales</h2>
         <a id="footerContact" href="pathways.html#candidati">Candidater via le formulaire</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../terms.html">Terms</a>

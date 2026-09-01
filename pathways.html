@@ -25,6 +25,9 @@
 <script>
 (function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="assets/style-guild.css">
 <script src="assets/config.js"></script>
 <script src="assets/analytics.js"></script>
@@ -45,7 +48,7 @@
     {"@type": "Course", "name": "Base Camp", "description": "Ammissione in Gilda. Prima diagnosi onesta: quanto dipendi oggi dalla scuola."},
     {"@type": "Course", "name": "Fondamenta", "description": "Infrastruttura per clienti diretti: P.IVA, assicurazione, prenotazione, listino."},
     {"@type": "Course", "name": "Cordata", "description": "Lavori in parallelo tra scuola e clienti diretti."},
-    {"@type": "Course", "name": "Vetta", "description": "Indipendenza reale: flusso diretto sufficiente, possibile mentorship."}
+    {"@type": "Course", "name": "Vetta", "description": "Indipendenza reale: flusso diretto sufficiente, possibile percorso da mentore."}
   ]
 }
 </script>
@@ -56,8 +59,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest theme-dark-only" src="assets/img/crest-mark-white.png" alt="" width="28" height="34">
-      <img class="brand-crest theme-light-only" src="assets/img/crest-mark-dark.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="assets/img/crest-mark-white.png" alt="" width="28" height="25">
+      <img class="brand-crest theme-light-only" src="assets/img/crest-mark-dark.png" alt="" width="28" height="37">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Principale">
@@ -214,7 +217,7 @@
       <div class="giant-row">
         <span class="gi-num">01</span>
         <div class="gi-body">
-          <h4>Ranghi I–III: checklist oggettiva</h4>
+          <h3>Ranghi I–III: checklist oggettiva</h3>
           <p>P.IVA, assicurazione, sistema di prenotazione, primi clienti diretti:
             cose che puoi verificare da solo, senza bisogno di un giudizio esterno.</p>
         </div>
@@ -222,7 +225,7 @@
       <div class="giant-row">
         <span class="gi-num">02</span>
         <div class="gi-body">
-          <h4>Rango IV: validazione tra pari</h4>
+          <h3>Rango IV: validazione tra pari</h3>
           <p>Per la Vetta serve la conferma di un mentore della Gilda. A quel livello
             il rischio è dichiararsi da soli.</p>
         </div>
@@ -230,7 +233,7 @@
       <div class="giant-row">
         <span class="gi-num">03</span>
         <div class="gi-body">
-          <h4>Dopo la Vetta: diventa mentore</h4>
+          <h3>Dopo la Vetta: diventa mentore</h3>
           <p>Chi raggiunge l'indipendenza reale può rientrare in Gilda come mentore
             per chi sta salendo dietro di lui.</p>
         </div>
@@ -251,6 +254,7 @@
         <span class="tag">Diagnosi</span>
         <h3>Revisione Indipendente</h3>
         <p>Per capire, prima di mettere tempo o soldi, dove profilo e processi perdono valore.</p>
+        <p class="path-meta">Durata: una sessione, restituzione scritta. Dopo la richiesta: risposta entro 48 ore lavorative con rango indicato e prossimo passo. Nessun pagamento su questa pagina.</p>
         <ul>
           <li>Punti di forza reali</li>
           <li>Lacune commerciali</li>
@@ -263,6 +267,7 @@
         <span class="tag">Attuazione</span>
         <h3>Affiancamento Operativo</h3>
         <p>Per chi sa già cosa serve e vuole aiuto concreto a trasformarlo in sistemi, messaggi e processi che reggono.</p>
+        <p class="path-meta">Durata: 4–6 settimane di lavoro insieme. Dopo la richiesta: risposta entro 48 ore lavorative su tenuta, rango e come si parte. Nessun pagamento su questa pagina.</p>
         <ul>
           <li>Setup del profilo/offerta</li>
           <li>Messaggi e materiali cliente</li>
@@ -275,6 +280,7 @@
         <span class="tag">Sviluppo</span>
         <h3>Percorso di Maestria</h3>
         <p>Per chi vuole struttura e direzione nel tempo, non solo una pezza tattica.</p>
+        <p class="path-meta">Durata: una stagione, con tappe di rango. Dopo la richiesta: risposta entro 48 ore lavorative su ammissione e da quale rango si entra. Nessun pagamento su questa pagina.</p>
         <ul>
           <li>Fiducia professionale</li>
           <li>Direzione di carriera</li>
@@ -363,24 +369,24 @@
         <div class="foot-brand">
           <img class="theme-dark-only" src="assets/img/crest-mark-white.png" alt="">
           <img class="theme-light-only" src="assets/img/crest-mark-dark.png" alt="">
-          <h5>The Crest Guild</h5>
+          <h2>The Crest Guild</h2>
         </div>
         <p style="max-width:280px;">Per maestri di sci che vogliono uscire dal solo
           modello scuola, un rango alla volta.</p>
       </div>
       <div>
-        <h5>Percorso</h5>
+        <h2>Percorso</h2>
         <a href="pathways.html">I Ranghi</a>
         <a href="quiz.html">Quiz</a>
         <a href="about.html">Chi Siamo</a>
       </div>
       <div>
-        <h5>Ecosystem ArmoFlow</h5>
+        <h2>Ecosystem ArmoFlow</h2>
         <a href="ecosystem.html">Come sono collegati i prodotti</a>
         <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
-        <h5>Legal</h5>
+        <h2>Legal</h2>
         <a id="footerContact" href="#candidati">Candidati via form</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>

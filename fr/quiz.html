@@ -25,6 +25,9 @@
 <script>
 (function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/style-guild.css">
 <script src="../assets/config.js"></script>
 <script src="../assets/analytics.js"></script>
@@ -36,27 +39,27 @@
     {
       "@type": "Question",
       "name": "Avez-vous une immatriculation professionnelle active ?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Il quiz valuta se hai già una P.IVA attiva come passo verso l'indipendenza."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Le quiz évalue si vous avez déjà une immatriculation professionnelle active comme étape vers l'indépendance."}
     },
     {
       "@type": "Question",
       "name": "Avez-vous votre propre système de réservation, distinct de celui de l'école ?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Avere un canale proprio (anche WhatsApp/calendario) è un criterio di rango nella Gilda."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Avoir votre propre canal, même WhatsApp ou un agenda personnel, est un critère de rang dans la Guilde."}
     },
     {
       "@type": "Question",
       "name": "Avez-vous déjà eu au moins un client qui vous a réservé directement ?",
-      "acceptedAnswer": {"@type": "Answer", "text": "I clienti diretti sono un segnale di passaggio da scuola-only a cordata."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Les clients directs signalent le passage d'un modèle uniquement lié à l'école vers la Cordée."}
     },
     {
       "@type": "Question",
       "name": "Les clients directs, à eux seuls, suffiraient-ils à couvrir vos dépenses ?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Se sì, sei vicino al rango Vetta: indipendenza economica reale."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Si oui, vous êtes proche du rang Sommet : une véritable indépendance économique."}
     },
     {
       "@type": "Question",
       "name": "Que voulez-vous atteindre dans les 12 prochains mois ?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Chiarezza, indipendenza completa o mentorship: il quiz orienta il prossimo passo."}
+      "acceptedAnswer": {"@type": "Answer", "text": "Clarté, indépendance complète ou mentorat : le quiz oriente votre prochaine étape."}
     }
   ]
 }
@@ -68,8 +71,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="34">
-      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="25">
+      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="37">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Principale">
@@ -114,10 +117,9 @@
 <main id="main">
 <section class="hero" style="padding-top:112px; padding-bottom:40px;">
   <div class="wrap">
-    <span class="eyebrow">Deux minutes. Aucune inscription aux questions.</span>
+    <span class="eyebrow">Aucune inscription pour répondre aux questions</span>
     <h1 style="font-size:clamp(30px,4vw,46px); margin-top:16px;">D'où vous partez,<br>où vous voulez aller.</h1>
-    <p class="lede">Cinq questions pour identifier votre rang de départ dans la Guilde
-      et l'étape la plus utile à faire maintenant.</p>
+    <p class="lede">Cinq questions. Puis le rang de départ et l'étape la plus utile maintenant.</p>
   </div>
 </section>
 
@@ -126,35 +128,35 @@
 
     <div id="quizStaticContent" class="quiz-static">
       <article>
-        <h3>Avez-vous une immatriculation professionnelle active ?</h3>
+        <h2>Avez-vous une immatriculation professionnelle active ?</h2>
         <ul>
           <li>Non, pas encore</li>
           <li>Oui, elle est active</li>
         </ul>
       </article>
       <article>
-        <h3>Avez-vous votre propre système de réservation, distinct de celui de l'école ?</h3>
+        <h2>Avez-vous votre propre système de réservation, distinct de celui de l'école ?</h2>
         <ul>
           <li>Non, j'utilise seulement celui de l'école</li>
           <li>Oui, j'ai le mien (même juste WhatsApp/agenda personnel)</li>
         </ul>
       </article>
       <article>
-        <h3>Avez-vous déjà eu au moins un client qui vous a réservé directement ?</h3>
+        <h2>Avez-vous déjà eu au moins un client qui vous a réservé directement ?</h2>
         <ul>
           <li>Non, jamais</li>
           <li>Oui, quelques fois</li>
         </ul>
       </article>
       <article>
-        <h3>Les clients directs, à eux seuls, suffiraient-ils à couvrir vos dépenses ?</h3>
+        <h2>Les clients directs, à eux seuls, suffiraient-ils à couvrir vos dépenses ?</h2>
         <ul>
           <li>Non, pas du tout</li>
           <li>Oui, ou presque</li>
         </ul>
       </article>
       <article>
-        <h3>Que voulez-vous atteindre dans les 12 prochains mois ?</h3>
+        <h2>Que voulez-vous atteindre dans les 12 prochains mois ?</h2>
         <ul>
           <li>Comprendre clairement par où commencer</li>
           <li>Sortir complètement du modèle école</li>
@@ -187,23 +189,23 @@
         <div class="foot-brand">
           <img class="theme-dark-only" src="../assets/img/crest-mark-white.png" alt="">
           <img class="theme-light-only" src="../assets/img/crest-mark-dark.png" alt="">
-          <h5>The Crest Guild</h5>
+          <h2>The Crest Guild</h2>
         </div>
         <p style="max-width:280px;">Pour les moniteurs de ski qui veulent sortir du seul modèle école,
           un rang à la fois.</p>
       </div>
       <div>
-        <h5>Parcours</h5>
+        <h2>Parcours</h2>
         <a href="pathways.html">Les Rangs</a>
         <a href="about.html">À propos</a>
       </div>
       <div>
-        <h5>Écosystème ArmoFlow</h5>
+        <h2>Écosystème ArmoFlow</h2>
         <a href="ecosystem.html">Comment les produits sont liés</a>
         <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
-        <h5>Mentions légales</h5>
+        <h2>Mentions légales</h2>
         <a id="footerContact" href="pathways.html#candidati">Candidater via le formulaire</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../terms.html">Terms</a>

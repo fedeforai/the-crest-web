@@ -25,6 +25,9 @@
 <script>
 (function(){try{var t=localStorage.getItem('crest_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);else document.documentElement.setAttribute('data-theme','dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/style-guild.css">
 <script src="../assets/config.js"></script>
 <script src="../assets/analytics.js"></script>
@@ -33,19 +36,19 @@
   "@context": "https://schema.org",
   "@type": "EducationalOccupationalProgram",
   "name": "The Guild's Ranks",
-  "description": "Percorso a cinque ranghi verificabili per maestri di sci, dalla dipendenza dalla scuola all'indipendenza.",
-  "url": "https://www.thecrestguild.com/pathways",
+  "description": "A five-rank verifiable path for ski instructors, from school dependence to independence.",
+  "url": "https://www.thecrestguild.com/en/pathways.html",
   "provider": {
     "@type": "Organization",
     "name": "The Crest Guild",
     "url": "https://www.thecrestguild.com/"
   },
   "hasCourse": [
-    {"@type": "Course", "name": "In School", "description": "Lavori solo tramite la scuola sci: clienti, tariffe e calendario decisi da altri."},
-    {"@type": "Course", "name": "Base Camp", "description": "Ammissione in Gilda. Prima diagnosi onesta: quanto dipendi oggi dalla scuola."},
-    {"@type": "Course", "name": "Foundations", "description": "Infrastruttura per clienti diretti: P.IVA, assicurazione, prenotazione, listino."},
-    {"@type": "Course", "name": "Rope Team", "description": "Lavori in parallelo tra scuola e clienti diretti."},
-    {"@type": "Course", "name": "Summit", "description": "Indipendenza reale: flusso diretto sufficiente, possibile mentorship."}
+    {"@type": "Course", "name": "In School", "description": "You work only through the ski school: clients, rates, and schedule decided by others."},
+    {"@type": "Course", "name": "Base Camp", "description": "Admission to the Guild. First honest assessment of how much you depend on the school today."},
+    {"@type": "Course", "name": "Foundations", "description": "Infrastructure for direct clients: business registration, insurance, booking, price list."},
+    {"@type": "Course", "name": "Rope Team", "description": "You work in parallel between the school and direct clients."},
+    {"@type": "Course", "name": "Summit", "description": "Real independence: sufficient direct flow, possible path to mentorship."}
   ]
 }
 </script>
@@ -56,8 +59,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="The Crest Guild">
-      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="34">
-      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="34">
+      <img class="brand-crest theme-dark-only" src="../assets/img/crest-mark-white.png" alt="" width="28" height="25">
+      <img class="brand-crest theme-light-only" src="../assets/img/crest-mark-dark.png" alt="" width="28" height="37">
       <span class="brand-name">The Crest Guild</span>
     </a>
     <nav class="navlinks" aria-label="Main">
@@ -214,7 +217,7 @@
       <div class="giant-row">
         <span class="gi-num">01</span>
         <div class="gi-body">
-          <h4>Ranks I–III: objective checklist</h4>
+          <h3>Ranks I–III: objective checklist</h3>
           <p>Business registration, insurance, a booking system, first direct clients:
             things you can verify yourself, no outside judgement needed.</p>
         </div>
@@ -222,7 +225,7 @@
       <div class="giant-row">
         <span class="gi-num">02</span>
         <div class="gi-body">
-          <h4>Rank IV: peer validation</h4>
+          <h3>Rank IV: peer validation</h3>
           <p>For the Summit you need confirmation from a Guild mentor. At that level,
             the risk is declaring it yourself.</p>
         </div>
@@ -230,7 +233,7 @@
       <div class="giant-row">
         <span class="gi-num">03</span>
         <div class="gi-body">
-          <h4>After the Summit: become a mentor</h4>
+          <h3>After the Summit: become a mentor</h3>
           <p>Whoever reaches real independence can come back to the Guild as a mentor
             for those climbing behind them.</p>
         </div>
@@ -251,6 +254,7 @@
         <span class="tag">Diagnosis</span>
         <h3>Independent Review</h3>
         <p>To understand, before putting time or money in, where profile and processes are losing value.</p>
+        <p class="path-meta">Duration: one session, written readout. After you ask: a reply within 48 working hours with a starting rank and next step. No payment on this page.</p>
         <ul>
           <li>Real strengths</li>
           <li>Business gaps</li>
@@ -263,6 +267,7 @@
         <span class="tag">Implementation</span>
         <h3>Operational Support</h3>
         <p>For those who already know what is needed and want concrete help turning it into systems, messaging, and processes that hold.</p>
+        <p class="path-meta">Duration: 4–6 weeks working together. After you ask: a reply within 48 working hours on fit, rank, and how you start. No payment on this page.</p>
         <ul>
           <li>Profile/offer setup</li>
           <li>Client messaging and materials</li>
@@ -275,6 +280,7 @@
         <span class="tag">Development</span>
         <h3>Mastery Path</h3>
         <p>For those who want structure and direction over time, not just a tactical patch.</p>
+        <p class="path-meta">Duration: one season, with rank checkpoints. After you ask: a reply within 48 working hours on admission and which rank you enter from. No payment on this page.</p>
         <ul>
           <li>Professional confidence</li>
           <li>Career direction</li>
@@ -362,24 +368,24 @@
         <div class="foot-brand">
           <img class="theme-dark-only" src="../assets/img/crest-mark-white.png" alt="">
           <img class="theme-light-only" src="../assets/img/crest-mark-dark.png" alt="">
-          <h5>The Crest Guild</h5>
+          <h2>The Crest Guild</h2>
         </div>
         <p style="max-width:280px;">For ski instructors who want to move beyond the school-only model,
           one rank at a time.</p>
       </div>
       <div>
-        <h5>Path</h5>
+        <h2>Path</h2>
         <a href="pathways.html">The Ranks</a>
         <a href="quiz.html">Quiz</a>
         <a href="about.html">About Us</a>
       </div>
       <div>
-        <h5>ArmoFlow Ecosystem</h5>
+        <h2>ArmoFlow Ecosystem</h2>
         <a href="ecosystem.html">How the products connect</a>
         <a data-track="outbound_click" href="https://frostdesk.ai" target="_blank" rel="noopener noreferrer">FrostDesk</a>
       </div>
       <div>
-        <h5>Legal</h5>
+        <h2>Legal</h2>
         <a id="footerContact" href="#candidati">Apply via the form</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../terms.html">Terms</a>
