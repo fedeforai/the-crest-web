@@ -113,6 +113,7 @@
   var nodesEl = document.getElementById('trailNodes');
   var detailEl = document.getElementById('trailDetail');
   var fgEl = document.getElementById('trailFg');
+  var trailRoot = nodesEl && nodesEl.closest('.trail');
   if (!nodesEl || !detailEl || !fgEl) return;
 
   function makeShield(){
@@ -166,7 +167,7 @@
 
     var doneCount = RANKS.filter(function(r){ return r.state === 'done'; }).length;
     var pct = (doneCount / (RANKS.length - 1)) * 100;
-    requestAnimationFrame(function(){ fgEl.style.width = pct + '%'; });
+    fgEl.style.width = pct + '%';
   }
 
   function showDetail(id, options){
@@ -201,6 +202,7 @@
   }
 
   showDetail(2, { scroll: false });
+  if (trailRoot) trailRoot.classList.add('is-ready');
 
   var params = new URLSearchParams(window.location.search);
   var intent = params.get('intent');
