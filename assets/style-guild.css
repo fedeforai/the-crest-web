@@ -318,8 +318,8 @@ html.js .trail.is-motion.is-clicking .trail-bead{
   opacity:0;
 }
 html.js .trail.is-ready .trail-node.is-current .trail-seal::before{
-  opacity:.75;
-  animation:trail-breath 2.6s ease-in-out infinite;
+  opacity:0;
+  animation:trail-breath 2.6s ease-in-out .7s infinite;
 }
 @keyframes trail-breath{
   0%,100%{ transform:scale(1); opacity:.4; }
