@@ -247,18 +247,48 @@ h3,h4{
   margin-bottom:8px;
   min-height:118px;
 }
+.trail-spine{
+  position:relative;
+  min-height:118px;
+}
 .trail-line-bg, .trail-line-fg{
-  position:absolute; left:10px; right:10px; top:23px;
+  position:absolute; left:0; right:0; top:23px;
   height:1px;
 }
 .trail-line-bg{ background:var(--border); }
 .trail-line-fg{
   background:var(--summit-blue);
-  width:50%;
+  width:0;
+  right:auto;
   transition:none;
 }
-html.js .trail.is-ready .trail-line-fg{
-  transition:width .5s cubic-bezier(0.16,1,0.3,1);
+.trail-bead{
+  position:absolute;
+  top:18px;
+  left:0;
+  width:11px;
+  height:11px;
+  margin-left:-5px;
+  border-radius:50%;
+  background:var(--summit-blue);
+  z-index:3;
+  pointer-events:none;
+  opacity:0;
+  box-shadow:0 0 8px color-mix(in srgb, var(--summit-blue) 55%, transparent);
+  transition:none;
+}
+html.js .trail.is-ready .trail-bead{ opacity:1; }
+html.js .trail.is-motion .trail-line-fg{
+  transition:left .7s cubic-bezier(0.22,1,0.36,1), width .7s cubic-bezier(0.22,1,0.36,1);
+}
+html.js .trail.is-motion .trail-bead{
+  transition:left .7s cubic-bezier(0.22,1,0.36,1), opacity .3s ease;
+}
+html.js .trail.is-motion.is-clicking .trail-line-fg{
+  transition:none;
+}
+html.js .trail.is-motion.is-clicking .trail-bead{
+  transition:left .4s cubic-bezier(0.22,1,0.36,1), opacity .3s ease;
 }
 .trail-nodes{
   position:relative; z-index:2;
@@ -275,7 +305,40 @@ html.js .trail.is-ready .trail-line-fg{
   border:0.5px solid var(--border);
   background:var(--canvas);
   display:flex; align-items:center; justify-content:center;
+  position:relative;
   transition:border-color .2s ease, background .2s ease;
+}
+.trail-node.is-current .trail-seal::before{
+  content:'';
+  position:absolute;
+  inset:-5px;
+  border-radius:50%;
+  border:1px solid color-mix(in srgb, var(--color-gold) 70%, transparent);
+  pointer-events:none;
+  opacity:0;
+}
+html.js .trail.is-ready .trail-node.is-current .trail-seal::before{
+  opacity:0;
+  animation:trail-breath 2.6s ease-in-out .7s infinite;
+}
+@keyframes trail-breath{
+  0%,100%{ transform:scale(1); opacity:.4; }
+  50%{ transform:scale(1.12); opacity:.9; }
+}
+@media (prefers-reduced-motion: reduce){
+  html.js .trail.is-ready .trail-node.is-current .trail-seal::before{
+    animation:none;
+    opacity:.75;
+    transform:none;
+  }
+}
+.trail-node.is-locked[aria-selected="true"] .trail-seal::after{
+  content:'';
+  position:absolute;
+  inset:-5px;
+  border-radius:50%;
+  border:1px dashed color-mix(in srgb, var(--color-gold) 65%, transparent);
+  pointer-events:none;
 }
 .trail-seal svg{ width:20px; height:23px; }
 .trail-seal .seal-shield{ stroke:var(--neutral-1); fill:none; transition:stroke .2s ease, fill .2s ease; }
@@ -303,7 +366,12 @@ html.js .trail.is-ready .trail-line-fg{
   font-size:9.5px; font-weight:500; letter-spacing:.1em; text-transform:uppercase;
   color:var(--text-dim2);
 }
-.trail-node[aria-selected="true"] .trail-seal{ box-shadow:none; outline:1px solid var(--color-gold); outline-offset:3px; }
+.trail-node[aria-selected="true"]:not(.is-locked) .trail-seal{
+  box-shadow:none; outline:1px solid var(--color-gold); outline-offset:3px;
+}
+.trail-node.is-locked[aria-selected="true"] .trail-seal{
+  outline:none;
+}
 
 .trail-detail{
   margin-top:44px;
@@ -313,6 +381,9 @@ html.js .trail.is-ready .trail-line-fg{
   padding:32px;
   background:var(--color-slate);
   color:var(--text-on-dark);
+}
+html.js .trail.is-motion .trail-detail{
+  transition:opacity .2s ease;
 }
 .trail-detail-head{
   display:flex; align-items:center; justify-content:space-between;
@@ -405,10 +476,13 @@ html[data-theme="light"] .trail-line-fg{
   .trail-seal{ width:44px; height:44px; }
   .trail-node .label{ font-size:11px; max-width:72px; }
   .trail-node .rank-tag{ font-size:8.5px; letter-spacing:.06em; }
+  .trail-spine{ min-height:108px; width:max-content; min-width:100%; }
+  .trail-bead{ top:25px; }
   .trail-line-bg, .trail-line-fg{
     display:block;
-    left:36px; right:36px; top:30px;
+    left:0; top:30px;
   }
+  .trail-line-fg{ right:auto; }
   .trail-detail{ margin-top:28px; padding:22px 18px; min-height:340px; }
   .trail-detail ul{ grid-template-columns:1fr; }
   .trail-detail h3{ font-size:20px; }
