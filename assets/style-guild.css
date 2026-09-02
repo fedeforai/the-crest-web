@@ -480,8 +480,9 @@ html[data-theme="light"] .trail-line-fg{
   .trail-bead{ top:25px; }
   .trail-line-bg, .trail-line-fg{
     display:block;
-    left:0; right:auto; top:30px;
+    left:0; top:30px;
   }
+  .trail-line-fg{ right:auto; }
   .trail-detail{ margin-top:28px; padding:22px 18px; min-height:340px; }
   .trail-detail ul{ grid-template-columns:1fr; }
   .trail-detail h3{ font-size:20px; }
