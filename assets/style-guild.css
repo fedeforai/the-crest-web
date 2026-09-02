@@ -240,11 +240,12 @@ h3,h4{
 
 
 /* ---------- guild trail (interactive horizontal path) ---------- */
-.trail{ padding:20px 0 0; min-height:min(48vh, 380px); }
+.trail{ padding:20px 0 0; min-height:min(56vh, 500px); }
 .trail-track{
   position:relative;
   padding:0 10px;
   margin-bottom:8px;
+  min-height:118px;
 }
 .trail-line-bg, .trail-line-fg{
   position:absolute; left:10px; right:10px; top:23px;
@@ -254,6 +255,9 @@ h3,h4{
 .trail-line-fg{
   background:var(--summit-blue);
   width:50%;
+  transition:none;
+}
+html.js .trail.is-ready .trail-line-fg{
   transition:width .5s cubic-bezier(0.16,1,0.3,1);
 }
 .trail-nodes{
@@ -303,7 +307,7 @@ h3,h4{
 
 .trail-detail{
   margin-top:44px;
-  min-height:min(42vh, 320px);
+  min-height:min(44vh, 360px);
   border:0.5px solid var(--border);
   border-radius:var(--radius-md);
   padding:32px;
@@ -378,6 +382,7 @@ html[data-theme="light"] .trail-line-fg{
     overflow-y:hidden;
     padding:4px 4px 14px;
     margin:0 -4px 8px;
+    min-height:108px;
     -webkit-overflow-scrolling:touch;
     scroll-snap-type:x proximity;
     scrollbar-width:thin;
@@ -404,7 +409,7 @@ html[data-theme="light"] .trail-line-fg{
     display:block;
     left:36px; right:36px; top:30px;
   }
-  .trail-detail{ margin-top:28px; padding:22px 18px; }
+  .trail-detail{ margin-top:28px; padding:22px 18px; min-height:340px; }
   .trail-detail ul{ grid-template-columns:1fr; }
   .trail-detail h3{ font-size:20px; }
 }
