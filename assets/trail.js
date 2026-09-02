@@ -110,11 +110,20 @@
 
   var RANKS = COPY[lang].ranks;
 
+  var geo = typeof CrestTrailGeometry !== 'undefined' ? CrestTrailGeometry : null;
   var nodesEl = document.getElementById('trailNodes');
   var detailEl = document.getElementById('trailDetail');
   var fgEl = document.getElementById('trailFg');
   var trailRoot = nodesEl && nodesEl.closest('.trail');
-  if (!nodesEl || !detailEl || !fgEl) return;
+  var trackEl = nodesEl && nodesEl.closest('.trail-track');
+  if (!nodesEl || !detailEl || !fgEl || !trackEl || !geo) return;
+
+  var progressIndex = geo.progressIndex(RANKS);
+  var selectedIndex = progressIndex;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nodesBuilt = false;
+  var beadEl = null;
+  var enterPlayed = false;
 
   function makeShield(){
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -145,14 +154,36 @@
     return node;
   }
 
-  function render(activeId){
-    clear(nodesEl);
+  function ensureSpine(){
+    if (trackEl.querySelector('.trail-spine')) return trackEl.querySelector('.trail-spine');
+    var spine = el('div', { className: 'trail-spine' });
+    var bg = trackEl.querySelector('.trail-line-bg');
+    trackEl.insertBefore(spine, bg || nodesEl);
+    if (bg) spine.appendChild(bg);
+    spine.appendChild(fgEl);
+    spine.appendChild(nodesEl);
+    return spine;
+  }
+
+  function ensureBead(spine){
+    if (beadEl) return beadEl;
+    beadEl = el('span', {
+      id: 'trailBead',
+      className: 'trail-bead',
+      'aria-hidden': 'true'
+    });
+    spine.appendChild(beadEl);
+    return beadEl;
+  }
+
+  function buildNodes(){
+    if (nodesBuilt) return;
     RANKS.forEach(function(r){
       var btn = el('button', {
         type: 'button',
         className: 'trail-node is-' + r.state,
         role: 'tab',
-        'aria-selected': String(r.id === activeId),
+        'aria-selected': 'false',
         'aria-controls': 'trailDetail',
         id: 'trail-tab-' + r.id
       });
@@ -164,18 +195,48 @@
       btn.addEventListener('click', function(){ showDetail(r.id); });
       nodesEl.appendChild(btn);
     });
-
-    var doneCount = RANKS.filter(function(r){ return r.state === 'done'; }).length;
-    var pct = (doneCount / (RANKS.length - 1)) * 100;
-    fgEl.style.width = pct + '%';
+    nodesBuilt = true;
   }
 
-  function showDetail(id, options){
-    options = options || {};
+  function sealCenters(){
+    var spine = trackEl.querySelector('.trail-spine');
+    var spineRect = spine.getBoundingClientRect();
+    var buttons = nodesEl.querySelectorAll('.trail-node');
+    var centers = [];
+    buttons.forEach(function(btn){
+      var seal = btn.querySelector('.trail-seal');
+      var r = seal.getBoundingClientRect();
+      centers.push((r.left + r.width / 2) - spineRect.left);
+    });
+    return centers;
+  }
+
+  function layoutLineAndBead(beadIndex, lineIndex){
+    var centers = sealCenters();
+    if (centers.length < 2) return;
+    var line = geo.lineFromCenters(centers, lineIndex);
+    fgEl.style.right = 'auto';
+    fgEl.style.left = line.left + 'px';
+    fgEl.style.width = line.width + 'px';
+    beadEl.style.left = centers[beadIndex] + 'px';
+    if (enterPlayed) {
+      var rank = RANKS.find(function(x){ return x.id === beadIndex; });
+      beadEl.style.opacity = String(geo.beadOpacity(rank.state));
+    }
+  }
+
+  function setSelected(id){
+    selectedIndex = id;
+    var buttons = nodesEl.querySelectorAll('.trail-node');
+    buttons.forEach(function(btn, i){
+      btn.setAttribute('aria-selected', String(i === id));
+    });
+  }
+
+  function fillDetail(id){
     var r = RANKS.find(function(x){ return x.id === id; });
     clear(detailEl);
     detailEl.setAttribute('aria-labelledby', 'trail-tab-' + id);
-
     var head = el('div', { className: 'trail-detail-head' });
     var left = el('div');
     left.appendChild(el('span', { className: 'eyebrow', text: r.tag }));
@@ -187,22 +248,88 @@
     var ul = el('ul');
     r.items.forEach(function(i){ ul.appendChild(el('li', { text: i })); });
     detailEl.appendChild(ul);
-    render(id);
+  }
+
+  function showDetail(id, options){
+    options = options || {};
+    setSelected(id);
+    if (trailRoot && options.scroll !== false) trailRoot.classList.add('is-clicking');
+    layoutLineAndBead(id, progressIndex);
+
+    if (reduced || options.scroll === false) {
+      detailEl.style.opacity = '1';
+      fillDetail(id);
+    } else {
+      detailEl.style.opacity = '0';
+      fillDetail(id);
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          detailEl.style.opacity = '1';
+        });
+      });
+    }
 
     if (options.scroll === false) return;
-
     var activeBtn = document.getElementById('trail-tab-' + id);
     if (activeBtn && typeof activeBtn.scrollIntoView === 'function') {
       try {
-        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        activeBtn.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', inline: 'center', block: 'nearest' });
       } catch (e) {
         activeBtn.scrollIntoView(false);
       }
     }
   }
 
-  showDetail(2, { scroll: false });
-  if (trailRoot) trailRoot.classList.add('is-ready');
+  function playEnter(){
+    if (enterPlayed) return;
+    enterPlayed = true;
+    layoutLineAndBead(0, 0);
+    if (trailRoot) trailRoot.classList.add('is-ready');
+    if (reduced) {
+      layoutLineAndBead(progressIndex, progressIndex);
+      return;
+    }
+    trailRoot.classList.add('is-motion');
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        layoutLineAndBead(progressIndex, progressIndex);
+      });
+    });
+  }
+
+  var spine = ensureSpine();
+  ensureBead(spine);
+  buildNodes();
+  showDetail(progressIndex, { scroll: false });
+  layoutLineAndBead(0, 0);
+
+  if (reduced || !('IntersectionObserver' in window)) {
+    playEnter();
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          playEnter();
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    io.observe(trailRoot);
+  }
+
+  var resizeTimer = null;
+  function relayout(){
+    layoutLineAndBead(selectedIndex, progressIndex);
+  }
+  window.addEventListener('resize', function(){
+    if (resizeTimer) clearTimeout(resizeTimer);
+    if (trailRoot) trailRoot.classList.remove('is-motion');
+    relayout();
+    resizeTimer = setTimeout(function(){
+      if (!reduced && enterPlayed && trailRoot) trailRoot.classList.add('is-motion');
+    }, 150);
+  });
+  trackEl.addEventListener('scroll', relayout, { passive: true });
 
   var params = new URLSearchParams(window.location.search);
   var intent = params.get('intent');
