@@ -116,7 +116,7 @@
   var fgEl = document.getElementById('trailFg');
   var trailRoot = nodesEl && nodesEl.closest('.trail');
   var trackEl = nodesEl && nodesEl.closest('.trail-track');
-  if (!nodesEl || !detailEl || !fgEl || !trackEl || !geo) return;
+  if (!nodesEl || !detailEl || !fgEl || !trackEl || !trailRoot || !geo) return;
 
   var progressIndex = geo.progressIndex(RANKS);
   var selectedIndex = progressIndex;
@@ -200,6 +200,7 @@
 
   function sealCenters(){
     var spine = trackEl.querySelector('.trail-spine');
+    if (!spine) return [];
     var spineRect = spine.getBoundingClientRect();
     var buttons = nodesEl.querySelectorAll('.trail-node');
     var centers = [];
@@ -289,7 +290,7 @@
       layoutLineAndBead(progressIndex, progressIndex);
       return;
     }
-    trailRoot.classList.add('is-motion');
+    if (trailRoot) trailRoot.classList.add('is-motion');
     requestAnimationFrame(function(){
       requestAnimationFrame(function(){
         layoutLineAndBead(progressIndex, progressIndex);
