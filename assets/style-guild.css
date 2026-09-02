@@ -326,7 +326,7 @@ html.js .trail.is-ready .trail-node.is-current .trail-seal::before{
   50%{ transform:scale(1.12); opacity:.9; }
 }
 @media (prefers-reduced-motion: reduce){
-  .trail-node.is-current .trail-seal::before{
+  html.js .trail.is-ready .trail-node.is-current .trail-seal::before{
     animation:none;
     opacity:.75;
     transform:none;
